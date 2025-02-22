@@ -1,21 +1,8 @@
 import React from 'react';
-import background from '../img/herramientas2.jpg'; 
 
 function SobreNosotros() {
   return (
-    <div className="relative">
-      <div className="absolute inset-0 z-0">
-        <img 
-          src={background} 
-          alt="Fondo" 
-          className="w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-black/70" /> 
-      </div>
-
-      <div className="relative z-10 container mx-auto px-4 py-16">
-
-        <div className="relative bg-opacity-20 p-6 rounded-lg mt-4  bg-black/70"> 
+      <div className="relative z-10 container mx-auto">
           <h1 className="text-white text-3xl pt-4 font-[Michroma] text-center">
             Servicio Mecánico Integral Altagama
           </h1>
@@ -44,8 +31,6 @@ function SobreNosotros() {
             </div>
           </div>
         </div>
-      </div>
-    </div>
   );
 }
 

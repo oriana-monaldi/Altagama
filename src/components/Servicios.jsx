@@ -4,7 +4,7 @@ function Servicios() {
   return (
     <div>
         <Card/>
-    </div>
+</div>
   )
 }
 

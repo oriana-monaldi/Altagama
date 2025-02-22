@@ -4,6 +4,8 @@ function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
+    document.documentElement.style.scrollBehavior = 'smooth';
+    
     if (isOpen) {
       document.body.style.overflow = 'hidden';
     } else {
@@ -14,6 +16,14 @@ function Navbar() {
       document.body.style.overflow = 'unset';
     };
   }, [isOpen]);
+
+  const scrollToSection = (sectionId) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView();
+      setIsOpen(false); 
+    }
+  };
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 overflow-x-hidden">
@@ -27,16 +37,28 @@ function Navbar() {
         </button>
 
         <ul className="hidden sm:flex space-x-10 text-lg">
-          <li className="text-white font-semibold hover:text-gray-300 cursor-pointer">
+          <li 
+            onClick={() => scrollToSection('inicio')}
+            className="text-white font-semibold hover:text-gray-300 cursor-pointer"
+          >
             Inicio
           </li>
-          <li className="text-white font-semibold hover:text-gray-300 cursor-pointer">
+          <li 
+            onClick={() => scrollToSection('sobre-nosotros')}
+            className="text-white font-semibold hover:text-gray-300 cursor-pointer"
+          >
             Sobre Nosotros
           </li>
-          <li className="text-white font-semibold hover:text-gray-300 cursor-pointer">
+          <li 
+            onClick={() => scrollToSection('servicios')}
+            className="text-white font-semibold hover:text-gray-300 cursor-pointer"
+          >
             Servicios
           </li>
-          <li className="text-white font-semibold hover:text-gray-300 cursor-pointer">
+          <li 
+            onClick={() => scrollToSection('contacto')}
+            className="text-white font-semibold hover:text-gray-300 cursor-pointer"
+          >
             Contacto
           </li>
         </ul>
@@ -58,16 +80,28 @@ function Navbar() {
           onClick={e => e.stopPropagation()}
         >
           <ul className="flex flex-col space-y-8 p-6 pt-20">
-            <li className="text-white font-semibold hover:text-gray-300 cursor-pointer">
+            <li 
+              onClick={() => scrollToSection('inicio')}
+              className="text-white font-semibold hover:text-gray-300 cursor-pointer"
+            >
               Inicio
             </li>
-            <li className="text-white font-semibold hover:text-gray-300 cursor-pointer">
-              Sobre Nosotros
-            </li>
-            <li className="text-white font-semibold hover:text-gray-300 cursor-pointer">
+            <li 
+              onClick={() => scrollToSection('servicios')}
+              className="text-white font-semibold hover:text-gray-300 cursor-pointer"
+            >
               Servicios
             </li>
-            <li className="text-white font-semibold hover:text-gray-300 cursor-pointer">
+            <li 
+              onClick={() => scrollToSection('sobre-nosotros')}
+              className="text-white font-semibold hover:text-gray-300 cursor-pointer"
+            >
+              Sobre Nosotros
+            </li>
+            <li 
+              onClick={() => scrollToSection('contacto')}
+              className="text-white font-semibold hover:text-gray-300 cursor-pointer"
+            >
               Contacto
             </li>
           </ul>

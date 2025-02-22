@@ -15,12 +15,14 @@ function Inicio() {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }, 4000); 
+    }, 4000);
     return () => clearInterval(interval);
   }, []);
 
   return (
     <div>
+      <div id="inicio"></div>
+
       <div className="relative flex items-center justify-center overflow-hidden h-[40vh]">
         {images.map((image, index) => (
           <img
@@ -39,7 +41,7 @@ function Inicio() {
           className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-60 object-contain z-20"
         />
       </div>
-      <SobreNosotros/>
+      <SobreNosotros />
       <img
         src={ingresoReal}
         alt="ingresoReal"
