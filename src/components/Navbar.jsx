@@ -111,7 +111,7 @@ function Navbar() {
       </nav>
 
       <a
-        href="https://api.whatsapp.com/send?phone=542213533444&text=Deseo%20hacerle%20una%20consulta...%20escriba%20aqui%20su%20consulta"
+        href="https://wa.link/imnkhh"
         target="_blank"
         rel="noopener noreferrer"
         className="fixed bottom-6 right-6 bg-[#25D366] w-16 h-16 rounded-full flex items-center justify-center shadow-lg hover:bg-[#128C7E] transition-colors duration-300 z-50"
