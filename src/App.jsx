@@ -2,6 +2,7 @@ import './App.css'
 import Inicio from './components/Inicio'
 import Servicios from './components/Servicios'
 import Mision from './components/Mision'
+import Contacto from './components/Contacto'
 
 function App() {
 
@@ -10,6 +11,8 @@ function App() {
     <Inicio/>
     <Servicios/>
     <Mision/>
+    <Contacto/>
+  
     </>
   )
 }
