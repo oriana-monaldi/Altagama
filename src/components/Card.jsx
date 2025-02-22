@@ -51,7 +51,6 @@ const ServicesGrid = () => {
 
   return (
     <section className="relative w-full overflow-hidden">
-      {/* Fondo con overlay */}
       <div className="absolute inset-0 z-0">
         <img 
           src={backgroundCar}

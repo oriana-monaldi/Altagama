@@ -18,7 +18,6 @@ function Navbar() {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 overflow-x-hidden">
       <div className="flex justify-center items-center p-6 relative w-full">
-        {/* Botón hamburguesa */}
         <button
           onClick={() => setIsOpen(!isOpen)}
           className="absolute left-6 text-white text-3xl sm:hidden focus:outline-none z-50"
@@ -27,7 +26,6 @@ function Navbar() {
           {isOpen ? '✕' : '☰'}
         </button>
 
-        {/* Menú desktop */}
         <ul className="hidden sm:flex space-x-10 text-lg">
           <li className="text-white font-semibold hover:text-gray-300 cursor-pointer">
             Inicio
@@ -44,7 +42,6 @@ function Navbar() {
         </ul>
       </div>
 
-      {/* Menú mobile */}
       <div 
         className={`
           fixed inset-0 bg-black/90 transition-opacity duration-300
