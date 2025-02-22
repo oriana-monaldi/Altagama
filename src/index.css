@@ -1,5 +1,20 @@
 @import "tailwindcss";
 
-body{
-  background-color:rgb(0, 0, 0);
+@import url('https://fonts.googleapis.com/css2?family=Michroma&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Michroma&family=Patua+One&family=Zilla+Slab:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+body {
+  background-color: ;
+  background-color: #071119;
+}
+
+
+@theme {
+  --font-display: "Satoshi", "sans-serif";
+  --breakpoint-3xl: 1920px;
+  --color-red-primary: #ed3324;
+  --color-yellow-primary: #f9ae18;
+  --color-blue-primary: #0071bb;
+  --color-celeste-primary: ##44c7f4;
+  --color-azul-fondo: #071119;
 }
