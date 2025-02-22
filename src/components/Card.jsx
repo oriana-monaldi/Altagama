@@ -7,7 +7,6 @@ import backgroundCar from "../img/car9.webp";
 
 const ServiceCard = ({ imgSrc, title, description }) => {
   return (
-    <div id="servicios">
     <div className="relative group cursor-pointer overflow-hidden bg-black/70 p-6 rounded-lg">
       <div className="relative flex justify-center">
         <img 
@@ -21,7 +20,6 @@ const ServiceCard = ({ imgSrc, title, description }) => {
         <h3 className="text-xl md:text-2xl font-bold">{title}</h3>
         <p className="text-sm text-gray-200 max-w-xs mx-auto">{description}</p>
       </div>
-    </div>
     </div>
 
   );
