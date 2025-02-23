@@ -26,31 +26,6 @@ const Contacto = () => {
             </div>
           </div>
 
-          <div className="bg-white/5 backdrop-blur-sm rounded-lg p-6">
-            <div className="space-y-4">
-              <div className="flex items-center gap-3">
-                <Phone className="w-6 h-6 text-green-400" />
-                <a 
-                  href="https://api.whatsapp.com/send?phone=542213533444&text=Deseo%20hacerle%20una%20consulta...%20escriba%20aqui%20su%20consulta"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-green-400 transition-colors text-white"
-                >
-                  WhatsApp: 2213533444
-                </a>
-              </div>
-              <div className="flex items-center gap-3">
-                <Mail className="w-6 h-6 text-red-400" />
-                <a 
-                  href="mailto:talleraltagama@yahoo.com.ar"
-                  className="hover:text-red-400 transition-colors text-white"
-                >
-                  talleraltagama@yahoo.com.ar
-                </a>
-              </div>
-            </div>
-          </div>
-
           <div className="bg-white/5 backdrop-blur-sm rounded-lg p-4">
             <h3 className="text-xl font-semibold mb-4 text-white">Redes Sociales</h3>
             <SocialIcons />
