@@ -91,7 +91,7 @@ const Mision = () => {
       title: "QUIÉNES SOMOS",
       color: "text-yellow-400",
       content:
-        "Somos un taller mecánico integral con más de 10 años de experiencia en el mercado automotriz. Nuestro equipo de profesionales altamente capacitados está comprometido con brindar el mejor servicio y soluciones efectivas para el mantenimiento y reparación de su vehículo.",
+        "Somos un taller mecánico integral con más de 20 años de experiencia en el mercado automotriz. Nuestro equipo de profesionales altamente capacitados está comprometido con brindar el mejor servicio y soluciones efectivas para el mantenimiento y reparación de su vehículo.",
     },
     {
       title: "VISIÓN",
