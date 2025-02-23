@@ -6,7 +6,7 @@ function SobreNosotros() {
       <img>
       </img>
       <h1 className="text-white text-3xl pt-4 text-center font-[Sprit]">
-        SERVICIO MECÁNICO INTEGRAL ALTAGAMA
+        SERVICIO MECÁNICO
       </h1>
 
       <p className="text-white mt-4 m-4">
