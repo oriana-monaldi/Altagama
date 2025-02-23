@@ -5,10 +5,11 @@ import SocialIcons from './SocialIcons';
 const Contacto = () => {
   return (
     <div id="contacto" className="bg-cover bg-center" style={{ backgroundImage: 'url(../img/car4.jpg)' }}>
-      <div className="max-w-6xl mx-auto px-4">
-        <h2 className="text-3xl font-bold text-center mb-12 text-white font-[Sprit]">CONTACTO</h2>
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+      <div className="max-w-6xl mx-auto px-4 lg:w-4/5">
+      <h1 className="text-white text-3xl  p-8 mb-6 text-center font-[Sprit]  w-full">
+            CONTACTO
+          </h1>        
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 mb-12">
           <div className="bg-white/5 backdrop-blur-sm rounded-lg p-6">
             <div className="flex items-center gap-3 mb-4">
               <Clock className="w-6 h-6 text-blue-400" />
@@ -25,9 +26,12 @@ const Contacto = () => {
               </p>
             </div>
           </div>
-
+    
           <div className="bg-white/5 backdrop-blur-sm rounded-lg p-4">
-            <h3 className="text-xl font-semibold mb-4 text-white">Redes Sociales</h3>
+            <div className="flex items-center gap-3 mb-2 ">
+              <Phone className="w-6 h-6 mt-2 ml-2 text-yellow-400" />
+              <h3 className="text-xl font-semibold mt-2 text-white">Medio de contacto</h3>
+            </div>
             <SocialIcons />
           </div>
         </div>
@@ -35,7 +39,7 @@ const Contacto = () => {
         <div className="space-y-4">
           <div className="flex items-center gap-2 justify-center mb-8">
             <MapPin className="w-6 h-6 text-red-500" />
-            <h3 className="text-2xl  font-semibold text-white">Nuestra Ubicación</h3>
+            <h3 className="text-2xl font-semibold text-white">Nuestra Ubicación</h3>
           </div>
           <div className="w-full rounded-lg overflow-hidden mb-4">
             <iframe 

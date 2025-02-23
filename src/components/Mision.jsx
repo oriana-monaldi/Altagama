@@ -104,7 +104,7 @@ const Mision = () => {
   return (
     <div className="bg-gray-900 text-white p-8 relative overflow-hidden">
       <div id="sobre-nosotros"></div>
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-6xl mx-auto px-4 lg:w-4/5">
         <div className="flex items-center mb-12">
           <h1 className="text-white text-3xl pt-4 text-center font-[Sprit] w-full">
             SOBRE NOSOTROS
@@ -166,7 +166,7 @@ const Mision = () => {
           ))}
         </div>
       </div>
-      <style jsx>{`
+      <style>{`
         .animate-in {
           animation: cardAnimateIn 1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
           transform-origin: center bottom;

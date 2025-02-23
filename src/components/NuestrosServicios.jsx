@@ -26,7 +26,7 @@ const NuestrosServicios = () => {
       color: "bg-blue-600",
     },
     {
-      image: carSiete,  
+      image: carTres,  
       title: "MECÁNICA",
       color: "bg-red-600",
     },
@@ -36,7 +36,7 @@ const NuestrosServicios = () => {
       color: "bg-sky-400",
     },
     {
-      image: carTres,  
+      image: carSiete,  
       title: "LUBRICENTRO",
       color: "bg-yellow-400",
     },
