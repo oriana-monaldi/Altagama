@@ -45,8 +45,8 @@ const Button = () => {
               </a>
             </li>
             <li className="icon email">
-              <span className="tooltip">WhatsApp</span>
-              <a href="https://wa.link/imnkhh"  target="_blank" rel="noopener noreferrer">
+              <span className="tooltip">Email</span>
+              <a href=""  target="_blank" rel="noopener noreferrer">
                 <img
                   src={email}
                   alt="email"
@@ -146,10 +146,10 @@ const StyledWrapper = styled.div`
     color: #fff;
   }
 
-  .wrapper .whatsapp:hover,
-  .wrapper .whatsapp:hover .tooltip,
-  .wrapper .whatsapp:hover .tooltip::before {
-    background: #;
+  .wrapper .email:hover,
+  .wrapper .email:hover .tooltip,
+  .wrapper .email:hover .tooltip::before {
+    background: #00BCFF;
     color: #fff;
   }
 
