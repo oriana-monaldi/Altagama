@@ -58,7 +58,7 @@ const Button = () => {
         </li>
         <li className="icon email">
           <span className="tooltip">Email</span>
-          <a href="mailto:talleraltagama@yahoo.com.ar">
+          <a href="mailto:talleraltagama@yahoo.com.ar?subject=Consulta&body=Hola,%20quiero%20hacer%20una%20consulta.">
             <img
               src={email}
               alt="email"
