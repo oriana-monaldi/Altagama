@@ -3,6 +3,8 @@ import React from "react";
 function SobreNosotros() {
   return (
     <div className="relative z-10 container mx-auto">
+      <img>
+      </img>
       <h1 className="text-white text-3xl pt-4 text-center font-[Sprit]">
         SERVICIO MECÁNICO INTEGRAL ALTAGAMA
       </h1>

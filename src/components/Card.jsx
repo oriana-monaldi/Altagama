@@ -1,37 +1,71 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import performance from "../img/performance.png";
-import performance2 from "../img/performance2.png"; 
+import performance2 from "../img/performance2.png";
 import performance3 from "../img/performance3.png";
 import performance4 from "../img/performance4.png";
 import backgroundCar from "../img/car9.webp";
 
 const ServiceCard = ({ imgSrc, title, description }) => {
+  const cardRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        // Si el elemento entra en el viewport, animamos la tarjeta
+        if (entry.isIntersecting) {
+          entry.target.classList.add("opacity-100", "translate-y-0");
+          entry.target.classList.remove("opacity-0", "translate-y-10");
+        } else {
+          // Cuando el elemento salga del viewport, lo reiniciamos
+          entry.target.classList.remove("opacity-100", "translate-y-0");
+          entry.target.classList.add("opacity-0", "translate-y-10");
+        }
+      },
+      {
+        threshold: 0.1,  // Cuando al menos el 10% del elemento es visible
+        rootMargin: "0px",
+      }
+    );
+
+    if (cardRef.current) {
+      observer.observe(cardRef.current);
+    }
+
+    return () => {
+      if (cardRef.current) {
+        observer.unobserve(cardRef.current);
+      }
+    };
+  }, []);
+
   return (
-    <div className="relative group cursor-pointer overflow-hidden bg-black/70 p-6 rounded-lg">
-      <div className="relative flex justify-center">
-        <img 
-          src={imgSrc} 
-          alt={title}
-          className="w-20 h-20 object-cover"
-        />
+    <div
+      ref={cardRef}
+      className="relative group cursor-pointer overflow-hidden bg-black/70 p-6 rounded-lg opacity-0 translate-y-10 transition-all duration-700 ease-out"
+    >
+      <div className="relative flex justify-center transform transition-transform duration-500 group-hover:scale-110">
+        <img src={imgSrc} alt={title} className="w-20 h-20 object-cover" />
       </div>
 
       <div className="text-center text-white mt-4">
-        <h3 className="text-xl md:text-2xl font-bold">{title}</h3>
-        <p className="text-sm text-gray-200 max-w-xs mx-auto">{description}</p>
+        <h3 className="text-xl md:text-2xl font-bold transform transition-transform duration-500 group-hover:-translate-y-1">
+          {title}
+        </h3>
+        <p className="text-sm text-gray-200 max-w-xs mx-auto transform transition-all duration-500 group-hover:text-white">
+          {description}
+        </p>
       </div>
     </div>
-
   );
 };
-
 
 const ServicesGrid = () => {
   const services = [
     {
       imgSrc: performance,
       title: "Mantenimiento Experto",
-      description: "Servicio integral para flotas y vehículos particulares con máxima eficiencia.",
+      description:
+        "Servicio integral para flotas y vehículos particulares con máxima eficiencia.",
     },
     {
       imgSrc: performance2,
@@ -53,19 +87,21 @@ const ServicesGrid = () => {
   return (
     <section className="relative w-full overflow-hidden">
       <div className="absolute inset-0 z-0">
-        <img 
-          src={backgroundCar}
-          alt="Background" 
-          className="w-full h-full object-cover"
-        />
+        <div className="absolute inset-0 scale-110">
+          <img
+            src={backgroundCar}
+            alt="Background"
+            className="w-full h-full object-cover"
+          />
+        </div>
         <div className="absolute inset-0 bg-black/70" />
       </div>
 
-      <div className="relative z-10 container mx-auto px-4 py-16">
-        <h2 className="text-3xl md:text-4xl font-bold text-center text-white mb-12">
-          Nuestros Servicios
-        </h2>
-        
+      <div className="relative z-10 container mx-auto px-4 py-8">
+        <h1 className="text-white text-3xl pt-2 pb-4 text-center font-[Sprit]">
+          Nuestros servicios
+        </h1>
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
           {services.map((service, index) => (
             <ServiceCard
