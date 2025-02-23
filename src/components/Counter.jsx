@@ -22,7 +22,7 @@ const StatsCounter = () => {
   }, []);
 
   return (
-    <div className="bg-[#0a0f14] p-4 text-white font-[Arial]">
+    <div className=" mt-8 mb-4 p-4 text-white font-[Arial]">
       <div className="max-w-[360px] mx-auto">
         <div className="grid grid-cols-2 gap-0 mb-8">
           <div className="text-center relative">

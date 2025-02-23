@@ -42,11 +42,6 @@ function Inicio() {
         />
       </div>
       <SobreNosotros />
-      <img
-        src={ingresoReal}
-        alt="ingresoReal"
-        className="w-[340px] h-[250px] rounded-2xl mx-auto mt-4"
-      />
       <div>
         <Counter />
       </div>
