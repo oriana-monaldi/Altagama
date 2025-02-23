@@ -40,6 +40,9 @@ function Inicio() {
           alt="logo"
           className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-60 object-contain z-20"
         />
+        <h1 className="text-white text-2xl pt-60 font-bold text-center font-[Sprit]">
+          SERVICIO MECÁNICO
+        </h1>
       </div>
       <SobreNosotros />
       <div>
