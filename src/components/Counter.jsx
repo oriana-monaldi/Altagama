@@ -1,4 +1,48 @@
 import { useState, useEffect } from "react";
+import { Star } from "lucide-react";
+
+const StarRating = ({ rating }) => {
+  const totalStars = 5;
+  const fullStars = Math.floor(rating);
+  const hasHalfStar = rating % 1 >= 0.3 && rating % 1 <= 0.7;
+  
+  return (
+    <div className="flex justify-center gap-0.5 mt-1">
+      {[...Array(totalStars)].map((_, index) => {
+        if (index === fullStars && hasHalfStar) {
+          return (
+            <div key={index} className="relative">
+              {/* Base star with border */}
+              <Star
+                size={16}
+                strokeWidth={2}
+                className="text-white fill-transparent"
+              />
+              {/* Half filled star overlay */}
+              <Star
+                size={16}
+                strokeWidth={0}
+                className="absolute top-0 left-0 fill-[#ffc107] [clip-path:inset(0_50%_0_0)]"
+              />
+            </div>
+          );
+        }
+        return (
+          <Star
+            key={index}
+            size={16}
+            strokeWidth={2}
+            className={
+              index < fullStars
+                ? 'fill-[#ffc107] text-white'
+                : 'fill-transparent text-white'
+            }
+          />
+        );
+      })}
+    </div>
+  );
+};
 
 const StatsCounter = () => {
   const [counts, setCounts] = useState({
@@ -13,16 +57,15 @@ const StatsCounter = () => {
       setCounts((prev) => ({
         clientesFelices: Math.min(prev.clientesFelices + 1, 25),
         autosDetallados: Math.min(prev.autosDetallados + 1, 15),
-        calificacionClientes: parseFloat((Math.min(prev.calificacionClientes + 0.1, 4,6)).toFixed(1)),
+        calificacionClientes: parseFloat((Math.min(prev.calificacionClientes + 0.1, 4.6)).toFixed(1)),
         anosExperiencia: Math.min(prev.anosExperiencia + 1, 15),
       }));
     }, 50);
-
     return () => clearInterval(interval);
   }, []);
 
   return (
-    <div className=" mt-8 mb-4 p-4 text-white font-[Arial]">
+    <div className="mt-8 mb-4 p-4 text-white font-[Arial]">
       <div className="max-w-[360px] mx-auto">
         <div className="grid grid-cols-2 gap-0 mb-8">
           <div className="text-center relative">
@@ -32,29 +75,27 @@ const StatsCounter = () => {
             <p className="text-xs md:text-sm tracking-wider">CLIENTES</p>
             <div className="absolute right-0 top-1/2 h-12 w-[1px] bg-gray-700 -translate-y-1/2" />
           </div>
-
           <div className="text-center">
             <h2 className="text-[#ffc107] text-3xl md:text-4xl font-bold mb-1">
               {counts.autosDetallados}K+
             </h2>
-            <p className="text-xs md:text-sm tracking-wider">CAR DETAILED</p>
+            <p className="text-xs md:text-sm tracking-wider">AUTOS </p>
           </div>
         </div>
-
         <div className="grid grid-cols-2 gap-0">
           <div className="text-center relative">
             <h2 className="text-[#ffc107] text-3xl md:text-4xl font-bold mb-1">
               {counts.calificacionClientes}
             </h2>
-            <p className="text-xs md:text-sm tracking-wider">CLIENT RATING</p>
+            <StarRating rating={counts.calificacionClientes} />
             <div className="absolute right-0 top-1/2 h-12 w-[1px] bg-gray-700 -translate-y-1/2" />
           </div>
-
           <div className="text-center">
             <h2 className="text-[#ffc107] text-3xl md:text-4xl font-bold mb-1">
               {counts.anosExperiencia}+
             </h2>
-            <p className="text-xs md:text-sm tracking-wider">YEARS OF EXPERIENCE</p>
+            <p className="text-xs md:text-sm tracking-wider">AÑOS DE</p>
+            <p className="text-xs md:text-sm tracking-wider">EXPERIENCIA</p>
           </div>
         </div>
       </div>
