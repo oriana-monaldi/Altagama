@@ -9,7 +9,7 @@ const Footer = () => {
 
         <p className="text-xs">Alejandro Monaldi</p>
 
-        <div className="text-xs mt-2 mb-">
+        <div className="text-xs mt-2 mb-4">
           <p>Calle 120 N° 188 e/ 530 y 531</p>
           <p>La Plata, Buenos Aires</p>
         </div>

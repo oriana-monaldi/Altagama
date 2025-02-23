@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import whatsapp from "../img/whastapp.png";
+import email from "../img/email.png";
 
 const Button = () => {
     return (
@@ -40,6 +41,16 @@ const Button = () => {
                   src={whatsapp}
                   alt="WhatsApp"
                   style={{ height: "30px", width: "35px" }}
+                />
+              </a>
+            </li>
+            <li className="icon email">
+              <span className="tooltip">WhatsApp</span>
+              <a href="https://wa.link/imnkhh"  target="_blank" rel="noopener noreferrer">
+                <img
+                  src={email}
+                  alt="email"
+                  style={{ height: "25px", width: "28px" }}
                 />
               </a>
             </li>
@@ -132,6 +143,13 @@ const StyledWrapper = styled.div`
   .wrapper .whatsapp:hover .tooltip,
   .wrapper .whatsapp:hover .tooltip::before {
     background: #25d366;
+    color: #fff;
+  }
+
+  .wrapper .whatsapp:hover,
+  .wrapper .whatsapp:hover .tooltip,
+  .wrapper .whatsapp:hover .tooltip::before {
+    background: #;
     color: #fff;
   }
 

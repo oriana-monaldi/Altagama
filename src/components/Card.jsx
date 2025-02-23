@@ -96,9 +96,7 @@ const ServicesGrid = () => {
       </div>
 
       <div className="relative z-10 container mx-auto px-4 py-8">
-        <h1 className="text-white text-3xl pt-2 pb-4 text-center font-[Sprit]">
-          Nuestros servicios
-        </h1>
+
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
           {services.map((service, index) => (

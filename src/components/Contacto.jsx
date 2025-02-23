@@ -51,14 +51,12 @@ const Contacto = () => {
             </div>
           </div>
 
-          {/* Redes Sociales */}
           <div className="bg-white/5 backdrop-blur-sm rounded-lg p-4">
             <h3 className="text-xl font-semibold mb-4 text-white">Redes Sociales</h3>
             <SocialIcons />
           </div>
         </div>
 
-        {/* Ubicación */}
         <div className="space-y-4">
           <div className="flex items-center gap-2 justify-center mb-8">
             <MapPin className="w-6 h-6 text-red-500" />
@@ -73,7 +71,7 @@ const Contacto = () => {
               allowFullScreen="" 
               loading="lazy" 
               referrerPolicy="no-referrer-when-downgrade"
-              className="rounded-lg"
+              className="rounded-lg "
             />
           </div>
         </div>
