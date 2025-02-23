@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
     document.documentElement.style.scrollBehavior = 'smooth';
@@ -11,8 +12,19 @@ function Navbar() {
     } else {
       document.body.style.overflow = 'unset';
     }
-    
+
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
     return () => {
+      window.removeEventListener("scroll", handleScroll);
       document.body.style.overflow = 'unset';
     };
   }, [isOpen]);
@@ -27,7 +39,9 @@ function Navbar() {
 
   return (
     <>
-      <nav className="fixed top-0 left-0 right-0 z-50 overflow-x-hidden">
+      <nav 
+        className={`fixed top-0 left-0 right-0 z-50 overflow-x-hidden transition-all duration-300 ${isScrolled ? 'bg-black/60' : 'bg-transparent'}`}
+      >
         <div className="flex justify-center items-center p-6 relative w-full">
           <button
             onClick={() => setIsOpen(!isOpen)}
@@ -67,7 +81,7 @@ function Navbar() {
 
         <div 
           className={`
-            fixed inset-0 bg-black/90 transition-opacity duration-300
+            fixed inset-0 bg-black/50 transition-opacity duration-300
             sm:hidden
             ${isOpen ? 'opacity-100 visible' : 'opacity-0 invisible'}
           `}
@@ -75,7 +89,7 @@ function Navbar() {
         >
           <div 
             className={`
-              fixed top-0 right-0 h-full w-64 bg-black transform transition-transform duration-300 ease-in-out
+              fixed top-0 right-0 h-full w-5 bg-black transform transition-transform duration-300 ease-in-out
               ${isOpen ? 'translate-x-0' : 'translate-x-full'}
             `}
             onClick={e => e.stopPropagation()}

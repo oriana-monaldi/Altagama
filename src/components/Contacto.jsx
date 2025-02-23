@@ -12,11 +12,11 @@ const Contacto = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 mb-12">
           <div className="bg-white/5 backdrop-blur-sm rounded-lg p-6">
             <div className="flex items-center gap-3 mb-4">
-              <Clock className="w-6 h-6 text-blue-400" />
-              <h3 className="text-xl font-semibold text-white">Horarios de Atención</h3>
+              <Clock className="w-6 h-6 mb-4 text-blue-400" />
+              <h3 className="text-xl font-semibold mb-4 text-white">Horarios de Atención</h3>
             </div>
-            <div className="space-y-2">
-              <p className="flex justify-between text-white">
+            <div className="space-y-2 ">
+              <p className="flex justify-between text-white mb-4 ">
                 <span>Lunes a Viernes:</span>
                 <span>8:00 - 18:00</span>
               </p>

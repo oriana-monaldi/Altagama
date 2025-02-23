@@ -3,6 +3,7 @@ import styled from "styled-components";
 import whatsapp from "../img/whastapp.png";
 import email from "../img/email.png";
 
+
 const Button = () => {
   return (
     <StyledWrapper>
@@ -75,18 +76,19 @@ const StyledWrapper = styled.div`
   .wrapper {
     display: inline-flex;
     list-style: none;
-    height: 120px;
+    height: auto;
     width: 100%;
     padding-top: 40px;
     font-family: "Poppins", sans-serif;
     justify-content: center;
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan en pantallas pequeñas */
+    gap: 10px; /* Espaciado entre los íconos */
   }
 
   .wrapper .icon {
     position: relative;
     background: #fff;
     border-radius: 50%;
-    margin: 10px;
     width: 50px;
     height: 50px;
     font-size: 18px;
@@ -132,9 +134,16 @@ const StyledWrapper = styled.div`
     pointer-events: auto;
   }
 
-  .wrapper .icon:hover span,
-  .wrapper .icon:hover .tooltip {
-    text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1);
+  /* Para pantallas menores a 350px */
+  @media (max-width: 350px) {
+    .wrapper {
+      justify-content: space-between; /* Acomoda los elementos en dos filas */
+    }
+
+    .wrapper .icon {
+      width: 40px;
+      height: 40px; /* Reduce el tamaño de los íconos */
+    }
   }
 
   .wrapper .facebook:hover,
@@ -163,11 +172,6 @@ const StyledWrapper = styled.div`
   .wrapper .email:hover .tooltip::before {
     background: #00bcff;
     color: #fff;
-  }
-
-  /* Nueva regla para el logo de WhatsApp */
-  .wrapper .whatsapp:hover img {
-    filter: invert(1) sepia(1) saturate(5) hue-rotate(90deg); /* Cambia la imagen a blanco */
   }
 `;
 
