@@ -4,6 +4,7 @@ import Servicios from './components/Servicios'
 import Mision from './components/Mision'
 import Contacto from './components/Contacto'
 import NuestrosServicios from './components/NuestrosServicios'
+import Footer from './components/Footer'
 
 function App() {
 
@@ -14,6 +15,7 @@ function App() {
     <Servicios/>
     <Mision/>
     <Contacto/>
+    <Footer/>
   
     </>
   )
