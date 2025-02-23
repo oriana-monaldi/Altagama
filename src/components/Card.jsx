@@ -11,18 +11,16 @@ const ServiceCard = ({ imgSrc, title, description }) => {
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        // Si el elemento entra en el viewport, animamos la tarjeta
         if (entry.isIntersecting) {
           entry.target.classList.add("opacity-100", "translate-y-0");
           entry.target.classList.remove("opacity-0", "translate-y-10");
         } else {
-          // Cuando el elemento salga del viewport, lo reiniciamos
           entry.target.classList.remove("opacity-100", "translate-y-0");
           entry.target.classList.add("opacity-0", "translate-y-10");
         }
       },
       {
-        threshold: 0.1,  // Cuando al menos el 10% del elemento es visible
+        threshold: 0.1,  
         rootMargin: "0px",
       }
     );
@@ -41,7 +39,7 @@ const ServiceCard = ({ imgSrc, title, description }) => {
   return (
     <div
       ref={cardRef}
-      className="relative group cursor-pointer overflow-hidden bg-black/70 p-6 rounded-lg opacity-0 translate-y-10 transition-all duration-700 ease-out"
+      className="relative group overflow-hidden bg-black/70 p-6 rounded-lg opacity-0 translate-y-10 transition-all duration-700 ease-out"
     >
       <div className="relative flex justify-center transform transition-transform duration-500 group-hover:scale-110">
         <img src={imgSrc} alt={title} className="w-20 h-20 object-cover" />

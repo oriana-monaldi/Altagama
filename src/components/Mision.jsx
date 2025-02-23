@@ -145,7 +145,6 @@ const Mision = () => {
                   className={`
                     ${card.color} text-2xl font-bold mb-4 font-[Sprit]
                     transform-gpu transition-transform duration-500
-                    group-hover:scale-110 group-hover:translate-z-10
                   `}
                 >
                   {card.title}
