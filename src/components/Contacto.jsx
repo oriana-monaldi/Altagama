@@ -5,14 +5,26 @@ import fondoServicios from '../img/fondoServicios.jpg';
 
 const Contacto = () => {
   const [scrollY, setScrollY] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
       setScrollY(window.scrollY);
     };
 
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768); // Puedes ajustar este valor según tu diseño
+    };
+
     window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    window.addEventListener("resize", handleResize);
+
+    handleResize(); // Llamar a la función para establecer el estado al inicio
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleResize);
+    };
   }, []);
 
   return (
@@ -21,13 +33,13 @@ const Contacto = () => {
       className="relative overflow-hidden"
       style={{ height: '100vh' }} 
     >
-      {/* Imagen de fondo con efecto parallax */}
+      {/* Imagen de fondo con o sin parallax */}
       <div 
-        className="absolute top-0 left-0 w-full h-full bg-cover bg-center"  
+        className={`absolute top-0 left-0 w-full h-full bg-cover bg-center ${!isMobile ? 'parallax' : ''}`}  
         style={{ 
           backgroundImage: `url(${fondoServicios})`, 
-          transform: `translateY(${scrollY * 0.5}px)`, 
-          willChange: "transform",
+          transform: !isMobile ? `translateY(${scrollY * 0.5}px)` : 'none', 
+          willChange: !isMobile ? "transform" : 'auto',
         }}
       />
 
