@@ -57,7 +57,7 @@ const Mision = () => {
 
     const container = containerRef.current;
     if (container) {
-      container.addEventListener('mousemove', handleMouseMove);
+      container.addEventListener("mousemove", handleMouseMove);
     }
 
     return () => {
@@ -67,7 +67,7 @@ const Mision = () => {
         }
       });
       if (container) {
-        container.removeEventListener('mousemove', handleMouseMove);
+        container.removeEventListener("mousemove", handleMouseMove);
       }
     };
   }, []);
@@ -98,7 +98,7 @@ const Mision = () => {
       <div id="sobre-nosotros"></div>
       <div className="w-full max-w-7xl mx-auto px-4">
         <div className="flex items-center mb-12">
-          <h1 className="text-white text-5xl p-25 mb-6 text-center w-full">
+          <h1 className="text-white text-4xl sm:text-4xl lg:text-5xl xl:text-5xl p-6 mb-6 text-center w-full">
             SOBRE NOSOTROS
           </h1>
         </div>
