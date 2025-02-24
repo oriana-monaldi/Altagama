@@ -7,21 +7,22 @@ import car9 from "../img/car9.webp";
 
 const ServiceCard = ({ imgSrc, title, description }) => {
   return (
-    <div className="bg-white/5 backdrop-blur-sm rounded-lg w-full p-6 mb-6 flex flex-col lg:flex-row items-center lg:items-start text-center lg:text-left mt-3">
-      <div className="flex-shrink-0 mr-10">
+    <div className="bg-white/5 backdrop-blur-sm rounded-lg w-full p-6 mb-6 flex flex-col md:flex-row items-center md:items-start">
+      <div className="flex-shrink-0">
         <img
           src={imgSrc}
           alt={title}
-          className="w-24 h-24 object-cover rounded-full"
+          className="w-24 h-24 object-cover "
         />
       </div>
-      <div className="flex flex-col lg:ml-4 mt-4 lg:mt-0 ">
+      <div className="ml-4 flex flex-col text-center md:text-left">
         <h3 className="text-xl font-semibold text-white mb-2">{title}</h3>
         <p className="text-gray-300">{description}</p>
       </div>
     </div>
   );
 };
+
 
 function Servicios() {
   const services = [
@@ -62,7 +63,7 @@ function Servicios() {
     >
       <div className="absolute top-0 left-0 w-full h-full bg-black opacity-70"></div>
 
-      <div className="relative z-10 px-4 w-full lg:w-1/2 ml-auto">
+      <div className="relative z-10 px-4 w-full md:w-1/2 ml-auto">
         <div className="flex flex-col gap-8">
           {services.map((service, index) => (
             <ServiceCard

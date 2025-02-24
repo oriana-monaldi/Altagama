@@ -30,7 +30,7 @@ function Inicio() {
             src={image}
             alt={`slide-${index}`}
             className={`absolute w-full h-full object-cover transition-opacity duration-1000 ${
-              index === currentIndex ? "opacity-30 z-10" : "opacity-0 z-0"
+              index === currentIndex ? "opacity-20 " : "opacity-0 z-0"
             }`}
           />
         ))}
