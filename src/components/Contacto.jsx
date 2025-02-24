@@ -33,13 +33,12 @@ const Contacto = () => {
       className="relative overflow-hidden"
       style={{ height: '100vh' }} 
     >
-      {/* Imagen de fondo con o sin parallax */}
+      {/* Imagen de fondo sin parallax en ambos casos */}
       <div 
-        className={`absolute top-0 left-0 w-full h-full bg-cover bg-center ${!isMobile ? 'parallax' : ''}`}  
+        className="absolute top-0 left-0 w-full h-full bg-cover bg-center"  
         style={{ 
           backgroundImage: `url(${fondoServicios})`, 
-          transform: !isMobile ? `translateY(${scrollY * 0.5}px)` : 'none', 
-          willChange: !isMobile ? "transform" : 'auto',
+          willChange: "background-image",
         }}
       />
 
@@ -78,7 +77,7 @@ const Contacto = () => {
         </div>
 
         {/* Mapa */}
-        <div className="bg-white/5 backdrop-blur-sm rounded-lg p-6 mb-12">
+        <div className="bg-white/5 backdrop-blur-sm rounded-lg p-6 mb-12 pb-16" style={{ minHeight: '350px' }}>
           <div className="flex items-center gap-2 justify-center mb-8">
             <MapPin className="w-6 h-6 text-red-500" />
             <h3 className="text-2xl font-semibold text-white">Nuestra Ubicación</h3>
