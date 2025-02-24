@@ -22,7 +22,7 @@ const Footer = () => {
         </div>
 
         <div className="flex flex-col items-center md:items-start">
-          <h3 className="text-lg font-bold mb-4">Connect With Us</h3>
+          <h3 className="text-lg font-bold mb-4">Contactate con nosotros</h3>
           <div className="flex space-x-4">
             <a
               href="https://www.facebook.com/AltaGamaBCS/?locale=es_LA"
