@@ -9,6 +9,10 @@ body {
 * {
   font-family: 'Open Sans', sans-serif;
 }
+@font-face {
+  font-family: 'Galvanizer';
+  src: url('/fonts/Galvanizer.ttf') format('opentype');
+}
 
 @theme {
   --breakpoint-3xl: 1920px;
@@ -19,7 +23,6 @@ body {
   --color-azul-fondo: #071119;
 }
 
-
-h1{
-  font-family: 'KACHIKA';
+h1 {
+  font-family: 'Galvanizer';
 }
