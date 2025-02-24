@@ -2,13 +2,10 @@
 @import "tailwindcss";
 
 
-body {
-  background-color: #101828;
-}
-
 * {
   font-family: 'Open Sans', sans-serif;
 }
+
 @font-face {
   font-family: 'Galvanizer';
   src: url('/fonts/Galvanizer.ttf') format('opentype');
@@ -23,6 +20,6 @@ body {
   --color-azul-fondo: #071119;
 }
 
-h1 {
+h1, li, h2{
   font-family: 'Galvanizer';
 }

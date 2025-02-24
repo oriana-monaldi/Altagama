@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import whatsapp from "/public/img/whastapp.png";
-import email from "/public/img/email.png";
+import whatsapp from "/img/whastapp.png";
+import email from "/img/email.png";
 
 
 const Button = () => {
@@ -79,19 +79,23 @@ const StyledWrapper = styled.div`
     height: auto;
     width: 100%;
     padding-top: 40px;
+      color: #000;
+
     font-family: "Poppins", sans-serif;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 20px; /* Aumentar el espacio entre los íconos */
+    gap: 20px; 
   }
 
   .wrapper .icon {
     position: relative;
-    background: #fff;
+    background: #000;
     border-radius: 50%;
     width: 50px;
     height: 50px;
     font-size: 18px;
+        background: #fff;
+
     display: flex;
     justify-content: center;
     align-items: center;
@@ -106,7 +110,7 @@ const StyledWrapper = styled.div`
     top: 0;
     font-size: 14px;
     background: #fff;
-    color: #fff;
+    color: #000;
     padding: 5px 8px;
     border-radius: 5px;
     box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
@@ -121,6 +125,8 @@ const StyledWrapper = styled.div`
     height: 8px;
     width: 8px;
     background: #fff;
+        color: #000;
+
     bottom: -3px;
     left: 50%;
     transform: translate(-50%) rotate(45deg);
@@ -155,28 +161,28 @@ const StyledWrapper = styled.div`
   .wrapper .facebook:hover .tooltip,
   .wrapper .facebook:hover .tooltip::before {
     background: #1877f2;
-    color: #fff;
+    color: #000;
   }
 
   .wrapper .instagram:hover,
   .wrapper .instagram:hover .tooltip,
   .wrapper .instagram:hover .tooltip::before {
     background: #e4405f;
-    color: #fff;
+    color: #000;
   }
 
   .wrapper .whatsapp:hover,
   .wrapper .whatsapp:hover .tooltip,
   .wrapper .whatsapp:hover .tooltip::before {
     background: #25d366;
-    color: #fff;
+    color: #000;
   }
 
   .wrapper .email:hover,
   .wrapper .email:hover .tooltip,
   .wrapper .email:hover .tooltip::before {
     background: #00bcff;
-    color: #fff;
+    color: #000;
   }
 `;
 

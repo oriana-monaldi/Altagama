@@ -1,9 +1,9 @@
 import React from "react";
-import performance from "/public/img/performance.png";
-import performance2 from "/public/img/performance2.png";
-import performance3 from "/public/img/performance3.png";
-import performance4 from "/public/img/performance4.png";
-import car9 from "/public/img/car9.webp";
+import performance from "/img/performance.png";
+import performance2 from "/img/performance2.png";
+import performance3 from "/img/performance3.png";
+import performance4 from "/img/performance4.png";
+import car9 from "/img/car9.webp";
 
 const ServiceCard = ({ imgSrc, title, description }) => {
   return (

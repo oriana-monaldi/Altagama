@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Clock, Phone, MapPin } from 'lucide-react';
 import SocialIcons from './SocialIcons';
-import fondoServicios from '/public/img/fondoServicios.jpg';
+import fondoServicios from "/img/fondoServicios.jpg";
 
 const Contacto = () => {
   const [scrollY, setScrollY] = useState(0);
@@ -42,7 +42,7 @@ const Contacto = () => {
         }}
       />
 
-      <div className="absolute top-0 left-0 w-full h-full bg-black opacity-50 z-0"></div>
+      <div className="absolute top-0 left-0 w-full h-full opacity-0 z-0"></div>
 
       <div className="max-w-6xl mx-auto px-4 lg:w-4/5 relative z-10 pt-16">
         <h1 className="text-white text-5xl p-8 mb-6 text-center  w-full">
