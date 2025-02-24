@@ -96,8 +96,8 @@ const NuestrosServicios = () => {
               ref={containerRef}
               className="flex transition-transform duration-500 ease-in-out cursor-grab active:cursor-grabbing"
               style={{
-                transform: `translateX(calc(-${activeIndex * 160}px + ${dragged}px))`,
-                width: `${duplicatedServices.length * 160}px`,
+                transform: `translateX(calc(-${activeIndex * 300}px + ${dragged}px))`, 
+                width: `${duplicatedServices.length * 300}px`,
               }}
               onMouseDown={handleMouseDown}
               onMouseMove={handleMouseMove}
@@ -108,7 +108,7 @@ const NuestrosServicios = () => {
               onTouchEnd={handleTouchEnd}
             >
               {duplicatedServices.map((service, index) => (
-                <div key={index} className="w-[160px] flex-shrink-0 px-2">
+                <div key={index} className="w-[300px] flex-shrink-0 px-12"> 
                   <div className="relative w-full h-64 flex flex-col rounded-lg overflow-hidden">
                     <div className="w-full h-48 flex-shrink-0">
                       <img
@@ -131,13 +131,11 @@ const NuestrosServicios = () => {
           </div>
         </div>
 
-        <div className="flex justify-center mt-4 gap-2">
+        <div className="flex justify-center mt-6 gap-4">
           {services.map((_, index) => (
             <button
               key={index}
-              className={`w-3 h-3 rounded-full ${
-                activeIndex === index ? "bg-blue-600" : "bg-gray-300"
-              }`}
+              className={`w-3 h-3 rounded-full ${activeIndex === index ? "bg-blue-600" : "bg-gray-300"}`}
               onClick={() => setActiveIndex(index)}
             />
           ))}

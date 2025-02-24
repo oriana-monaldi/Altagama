@@ -12,13 +12,11 @@ const StarRating = ({ rating }) => {
         if (index === fullStars && hasHalfStar) {
           return (
             <div key={index} className="relative">
-              {/* Base star with border */}
               <Star
                 size={16}
                 strokeWidth={2}
                 className="text-white fill-transparent"
               />
-              {/* Half filled star overlay */}
               <Star
                 size={16}
                 strokeWidth={0}

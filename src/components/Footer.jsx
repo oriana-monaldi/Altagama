@@ -3,8 +3,12 @@ import logo from "/img/logo.png";
 
 const Footer = () => {
   return (
-    <footer className="bg-gradient-to-r from-gray-900 to-black  text-white">
-      <div className="max-w-7xl mx-auto px-4 grid grid-cols-1  md:grid-cols-3 gap-8">
+  <footer className="bg-gradient-to-r from-gray-900 to-black  text-white">
+
+   
+{/* <footer className="bg-gradient-to-r from-black to-[#1a1a1a] text-white">
+ */}
+<div className="max-w-7xl mx-auto px-4 grid grid-cols-1  md:grid-cols-3 gap-8">
         <div className="flex flex-col items-center ml-18 md:items-start">
         <p className="text-lg mt-8 mb-4  font-semibold">Alejandro Monaldi</p>
           <address className="text-xs mt-2 not-italic">

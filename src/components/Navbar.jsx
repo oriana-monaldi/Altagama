@@ -40,7 +40,7 @@ function Navbar() {
   return (
     <>
       <nav 
-        className={`fixed top-0 left-0 right-0 z-50 overflow-x-hidden transition-all duration-300 ${isScrolled ? 'bg-black/80' : 'bg-transparent'}`}
+        className={`fixed top-0 left-0 right-0 z-50 overflow-x-hidden transition-all duration-300 ${isScrolled ? 'bg-black/60' : 'bg-transparent'}`}
       >
         <div className="flex justify-center items-center p-6 relative w-full">
           <button

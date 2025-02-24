@@ -10,20 +10,12 @@ const Mision = () => {
         entries.forEach((entry, index) => {
           if (entry.isIntersecting) {
             setTimeout(() => {
-              entry.target.classList.add(
-                "animate-in"
-              );
-              entry.target.classList.remove(
-                "animate-out"
-              );
+              entry.target.classList.add("animate-in");
+              entry.target.classList.remove("animate-out");
             }, index * 300);
           } else {
-            entry.target.classList.remove(
-              "animate-in"
-            );
-            entry.target.classList.add(
-              "animate-out"
-            );
+            entry.target.classList.remove("animate-in");
+            entry.target.classList.add("animate-out");
           }
         });
       },
@@ -42,14 +34,14 @@ const Mision = () => {
     const handleMouseMove = (e) => {
       cardRefs.current.forEach((card, index) => {
         if (!card) return;
-        
+
         const rect = card.getBoundingClientRect();
         const x = e.clientX - rect.left;
         const y = e.clientY - rect.top;
-        
+
         const centerX = rect.width / 2;
         const centerY = rect.height / 2;
-        
+
         const rotateX = (y - centerY) / 20;
         const rotateY = (centerX - x) / 20;
 
@@ -91,7 +83,7 @@ const Mision = () => {
       h2: "VISIÓN",
       color: "text-blue-400",
       content:
-      "Constituirnos en una organización de gran escala que pueda atender todas las necesidades en mantenimiento y reparación automotriz, utilizando recursos de excelencia para cumplir siempre con sus expectativas.",
+        "Constituirnos en una organización de gran escala que pueda atender todas las necesidades en mantenimiento y reparación automotriz, utilizando recursos de excelencia para cumplir siempre con sus expectativas.",
     },
     {
       h2: "QUIÉNES SOMOS",
@@ -102,17 +94,17 @@ const Mision = () => {
   ];
 
   return (
-    <div className=" text-white p-8 relative overflow-hidden">
+    <div className="text-white p-20 relative overflow-hidden min-h-screen">
       <div id="sobre-nosotros"></div>
-      <div className="max-w-6xl mx-auto px-4 lg:w-4/5">
+      <div className="w-full max-w-7xl mx-auto px-4">
         <div className="flex items-center mb-12">
-        <h1 className="text-white text-5xl p-8 mb-6 text-center w-full">
-          SOBRE NOSOTROS
-        </h1>    
+          <h1 className="text-white text-5xl p-25 mb-6 text-center w-full">
+            SOBRE NOSOTROS
+          </h1>
         </div>
-        <div 
+        <div
           ref={containerRef}
-          className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12 relative z-10" 
+          className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12 relative z-10"
         >
           {cardContents.map((card, index) => (
             <div
@@ -137,7 +129,7 @@ const Mision = () => {
                 shadow-lg shadow-black/20
               `}
               style={{
-                transformStyle: 'preserve-3d',
+                transformStyle: "preserve-3d",
               }}
             >
               <div className="relative z-10">
@@ -149,19 +141,18 @@ const Mision = () => {
                 >
                   {card.h2}
                 </h2>
-                <p className="
-                  text-gray-300 transform-gpu transition-all duration-500
-                  group-hover:text-white group-hover:translate-z-10
-                ">
+                <p className="text-gray-300 transform-gpu transition-all duration-500 group-hover:text-white group-hover:translate-z-10">
                   {card.content}
                 </p>
               </div>
-              <div className="
+              <div
+                className="
                 absolute inset-0 bg-gradient-to-tr
                 from-white/0 via-white/5 to-white/0
                 rounded-xl opacity-0 group-hover:opacity-100
                 blur-xl transition-opacity duration-500
-              "/>
+              "
+              />
             </div>
           ))}
         </div>
@@ -171,12 +162,12 @@ const Mision = () => {
           animation: cardAnimateIn 1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
           transform-origin: center bottom;
         }
-        
+
         .animate-out {
           animation: cardAnimateOut 0.7s cubic-bezier(0.4, 0, 0.2, 1) forwards;
           transform-origin: center bottom;
         }
-        
+
         @keyframes cardAnimateIn {
           0% {
             opacity: 0;
@@ -197,7 +188,7 @@ const Mision = () => {
               translateZ(0);
           }
         }
-        
+
         @keyframes cardAnimateOut {
           0% {
             opacity: 1;
