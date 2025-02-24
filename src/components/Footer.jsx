@@ -19,8 +19,8 @@ const Footer = () => {
             <img src={logo} alt="Logo" className="w-32 h-32 md:w-40 md:h-40" />
           </div>
 
-          <div className="w-full flex flex-col justify-center ml-20">
-            <p className="text-lg font-semibold mb-4 ">Contactate con nosotros</p>
+          <div className=" flex flex-col justify-center ml-20">
+            <p className="text-lg font-semibold ">Contactate con nosotros</p>
             <div className="flex gap-4">
               <a
                 href="https://www.facebook.com/AltaGamaBCS/?locale=es_LA"
