@@ -23,3 +23,14 @@
 h1, li, h2{
   font-family: 'Galvanizer';
 }
+
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+  position: relative;
+}
+
+#root {
+  overflow-x: hidden;
+  width: 100%;
+}

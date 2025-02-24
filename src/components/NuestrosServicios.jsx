@@ -88,9 +88,9 @@ const NuestrosServicios = () => {
   };
 
   return (
-    <div>
+    <div className="w-full overflow-hidden">
       <div className="mt-10 mb-10">
-        <div className="w-full max-w-7xl mx-auto px-4">
+      <div className="w-full max-w-7xl mx-auto px-4 overflow-hidden">
           <div className="relative overflow-hidden">
             <div
               ref={containerRef}

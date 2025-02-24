@@ -3,7 +3,6 @@ import car7 from "/img/car7.jpg";
 import car4 from "/img/car4.jpg";
 import ingresoReal from "/img/ingreso_real.jpg";
 import logo from "/img/logo.png";
-import Navbar from "./Navbar";
 import Counter from "./Counter";
 import SobreNosotros from "./SobreNosotros";
 
@@ -20,11 +19,12 @@ function Inicio() {
   }, []);
 
   return (
-    <div>
+    <div className="w-full overflow-x-hidden">
+      
       <div id="inicio"></div>
 
-      <div className="relative flex items-center justify-center overflow-hidden h-[40vh]">
-        {images.map((image, index) => (
+      <div className="relative flex items-center justify-center overflow-hidden h-[40vh] w-full">
+      {images.map((image, index) => (
           <img
             key={index}
             src={image}
@@ -34,7 +34,6 @@ function Inicio() {
             }`}
           />
         ))}
-        <Navbar />
         <img
           src={logo}
           alt="logo"
@@ -45,8 +44,8 @@ function Inicio() {
         </h1>
       </div>
       <SobreNosotros />
-      <div>
-        <Counter />
+      <div className="w-full">
+      <Counter />
       </div>
     </div>
   );
