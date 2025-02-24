@@ -99,9 +99,9 @@ const Mision = () => {
     <div id="sobre-nosotros"></div>
     <div className="w-full max-w-7xl mx-auto px-2 sm:px-4">
       <div className="flex items-center mb-8 sm:mb-12">
-        <h1 className="text-white text-3xl sm:text-4xl lg:text-5xl p-4 sm:p-6 mb-4 sm:mb-6 text-center w-full">
-          SOBRE NOSOTROS
-        </h1>
+      <h1 className="text-white text-4xl sm:text-4xl lg:text-5xl xl:text-5xl p-6 mb-6 text-center w-full">
+            SOBRE NOSOTROS
+          </h1>   
       </div>
       <div
         ref={containerRef}
