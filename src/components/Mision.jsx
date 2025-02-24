@@ -95,14 +95,16 @@ const Mision = () => {
 
 
  return (
-  <div className="text-white p-4 sm:p-8 md:p-12 lg:p-20 relative overflow-hidden min-h-screen">
-    <div id="sobre-nosotros"></div>
-    <div className="w-full max-w-7xl mx-auto px-2 sm:px-4">
-      <div className="flex items-center mb-8 sm:mb-12">
-      <h1 className="text-white text-4xl sm:text-4xl lg:text-5xl xl:text-5xl p-6 mb-6 text-center w-full">
-            SOBRE NOSOTROS
-          </h1>   
-      </div>
+  <div id="sobre-nosotros">
+
+
+  <div className="text-white p-4 sm:p-8 md:p-12 lg:p-20 relative overflow-hidden min-h-screen flex items-center">
+  <div className="w-full max-w-7xl mx-auto px-2 sm:px-4 my-12 sm:my-16 md:my-20">
+    <div className="flex items-center mb-12 sm:mb-16">
+      <h1 className="text-white text-4xl sm:text-4xl lg:text-5xl xl:text-5xl p-6 text-center w-full">
+        SOBRE NOSOTROS
+      </h1>   
+    </div>
       <div
         ref={containerRef}
         className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 mb-8 sm:mb-12 relative z-10"
@@ -159,6 +161,7 @@ const Mision = () => {
         ))}
       </div>
     </div>
+  </div>
       <style>{`
         .animate-in {
           animation: cardAnimateIn 1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
