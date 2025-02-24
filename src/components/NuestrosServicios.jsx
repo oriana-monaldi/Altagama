@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import carUno from "../img/car1.png";
 import carDos from "../img/car2.png";
 import carCuatro from "../img/car4.jpg";
@@ -8,49 +8,84 @@ import carTres from "../img/car3.avif";
 
 const NuestrosServicios = () => {
   const [activeIndex, setActiveIndex] = useState(0);
+  const [isDragging, setIsDragging] = useState(false);
+  const [startX, setStartX] = useState(0);
+  const [dragged, setDragged] = useState(0);
+  const containerRef = useRef(null);
+  const autoSlideRef = useRef(null);
 
   const services = [
-    {
-      image: carUno,  
-      title: "INYECCIÓN ELECTRÓNICA",
-      color: "bg-sky-400",
-    },
-    {
-      image: carDos,  
-      title: "FRENOS",
-      color: "bg-yellow-400",
-    },
-    {
-      image: carCuatro,  
-      title: "SISTEMAS ELÉCTRICOS",
-      color: "bg-blue-600",
-    },
-    {
-      image: carTres,  
-      title: "MECÁNICA",
-      color: "bg-red-600",
-    },
-    {
-      image: herramientas, 
-      title: "TREN DELANTERO",
-      color: "bg-sky-400",
-    },
-    {
-      image: carSiete,  
-      title: "LUBRICENTRO",
-      color: "bg-yellow-400",
-    },
+    { image: carUno, title: "INYECCIÓN ELECTRÓNICA", color: "bg-sky-400" },
+    { image: carDos, title: "FRENOS", color: "bg-yellow-400" },
+    { image: carCuatro, title: "SISTEMAS ELÉCTRICOS", color: "bg-blue-600" },
+    { image: carTres, title: "MECÁNICA", color: "bg-red-600" },
+    { image: herramientas, title: "TREN DELANTERO", color: "bg-sky-400" },
+    { image: carSiete, title: "LUBRICENTRO", color: "bg-yellow-400" },
   ];
 
   const duplicatedServices = [...services, ...services];
 
   useEffect(() => {
-    const interval = setInterval(() => {
+    startAutoSlide();
+    return () => stopAutoSlide();
+  }, []);
+
+  const startAutoSlide = () => {
+    stopAutoSlide(); 
+    autoSlideRef.current = setInterval(() => {
       setActiveIndex((prevIndex) => (prevIndex + 1) % services.length);
     }, 3000);
+  };
 
-    return () => clearInterval(interval);
-  }, [services.length]);
+  const stopAutoSlide = () => {
+    if (autoSlideRef.current) clearInterval(autoSlideRef.current);
+  };
+
+  const handleMouseDown = (e) => {
+    stopAutoSlide();
+    setIsDragging(true);
+    setStartX(e.clientX);
+  };
+
+  const handleMouseMove = (e) => {
+    if (!isDragging) return;
+    const delta = e.clientX - startX;
+    setDragged(delta);
+  };
+
+  const handleMouseUp = () => {
+    setIsDragging(false);
+    if (dragged < -50) {
+      setActiveIndex((prev) => (prev + 1) % services.length);
+    } else if (dragged > 50) {
+      setActiveIndex((prev) => (prev - 1 + services.length) % services.length);
+    }
+    setDragged(0);
+    startAutoSlide();
+  };
+
+  const handleTouchStart = (e) => {
+    stopAutoSlide();
+    setIsDragging(true);
+    setStartX(e.touches[0].clientX);
+  };
+
+  const handleTouchMove = (e) => {
+    if (!isDragging) return;
+    const delta = e.touches[0].clientX - startX;
+    setDragged(delta);
+  };
+
+  const handleTouchEnd = () => {
+    setIsDragging(false);
+    if (dragged < -50) {
+      setActiveIndex((prev) => (prev + 1) % services.length);
+    } else if (dragged > 50) {
+      setActiveIndex((prev) => (prev - 1 + services.length) % services.length);
+    }
+    setDragged(0);
+    startAutoSlide();
+  };
 
   return (
     <div>
@@ -58,11 +93,19 @@ const NuestrosServicios = () => {
         <div className="w-full max-w-7xl mx-auto px-4">
           <div className="relative overflow-hidden">
             <div
-              className="flex transition-transform duration-500 ease-in-out"
+              ref={containerRef}
+              className="flex transition-transform duration-500 ease-in-out cursor-grab active:cursor-grabbing"
               style={{
-                transform: `translateX(-${activeIndex * 160}px)`,
+                transform: `translateX(calc(-${activeIndex * 160}px + ${dragged}px))`,
                 width: `${duplicatedServices.length * 160}px`,
               }}
+              onMouseDown={handleMouseDown}
+              onMouseMove={handleMouseMove}
+              onMouseUp={handleMouseUp}
+              onMouseLeave={handleMouseUp}
+              onTouchStart={handleTouchStart}
+              onTouchMove={handleTouchMove}
+              onTouchEnd={handleTouchEnd}
             >
               {duplicatedServices.map((service, index) => (
                 <div key={index} className="w-[160px] flex-shrink-0 px-2">

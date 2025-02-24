@@ -112,7 +112,7 @@ const Mision = () => {
         </div>
         <div 
           ref={containerRef}
-          className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12 relative z-10" // Aquí añadí el gap-8 y mb-12 para asegurar un buen espaciado
+          className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12 relative z-10" 
         >
           {cardContents.map((card, index) => (
             <div
