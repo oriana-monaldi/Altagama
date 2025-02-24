@@ -15,13 +15,15 @@ const NuestrosServicios = () => {
   const autoSlideRef = useRef(null);
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
 
+  // colors
+
   const services = [
-    { image: carUno, title: "INYECCIÓN ELECTRÓNICA", color: "bg-sky-400" },
-    { image: carDos, title: "FRENOS", color: "bg-yellow-400" },
-    { image: carCuatro, title: "SISTEMAS ELÉCTRICOS", color: "bg-blue-600" },
+    { image: carUno, title: "INYECCIÓN ELECTRÓNICA", color: "bg-blue-600" },
+    { image: carDos, title: "FRENOS", color: "bg-sky-400" },
+    { image: carCuatro, title: "SISTEMAS ELÉCTRICOS", color: "bg-yellow-400" },
     { image: carTres, title: "MECÁNICA", color: "bg-red-600" },
-    { image: herramientas, title: "TREN DELANTERO", color: "bg-sky-400" },
-    { image: carSiete, title: "LUBRICENTRO", color: "bg-yellow-400" },
+    { image: herramientas, title: "TREN DELANTERO", color: "bg-blue-600" },
+    { image: carSiete, title: "LUBRICENTRO", color: "bg-sky-400" },
   ];
 
   const duplicatedServices = [...services, ...services];
@@ -57,8 +59,8 @@ const NuestrosServicios = () => {
   const getCardWidth = () => {
     const containerPadding = 32;
     const gap = 8;
-    const maxCardWidth = 280; 
-  
+    const maxCardWidth = 280;
+
     let calculatedWidth;
     if (screenWidth < 640) {
       calculatedWidth = (screenWidth - containerPadding - gap) / 2;
@@ -67,7 +69,7 @@ const NuestrosServicios = () => {
     } else {
       calculatedWidth = (screenWidth - containerPadding - gap * 3) / 4;
     }
-  
+
     return Math.min(calculatedWidth, maxCardWidth);
   };
 
@@ -147,25 +149,27 @@ const NuestrosServicios = () => {
               >
                 {duplicatedServices.map((service, index) => (
                   <div
-                  key={index}
-                  style={{ width: `${getCardWidth()}px` }}
-                  className="flex-shrink-0 px-1 sm:px-2"
-                >
-                  <div className="relative w-full h-32 sm:h-36 md:h-40 lg:h-44 flex flex-col rounded-lg overflow-hidden shadow-md">
-                    <div className="w-full h-20 sm:h-24 md:h-28 lg:h-32 flex-shrink-0">
-                      <img
-                        src={service.image}
-                        alt={service.title}
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-                    <div className={`flex-1 flex items-center justify-center ${service.color} text-white px-1 py-1`}>
-                      <h3 className="text-[10px] sm:text-xs md:text-sm font-semibold text-center leading-tight">
-                        {service.title}
-                      </h3>
+                    key={index}
+                    style={{ width: `${getCardWidth()}px` }}
+                    className="flex-shrink-0 px-1 sm:px-2"
+                  >
+                    <div className="relative w-full h-32 sm:h-36 md:h-40 lg:h-44 flex flex-col rounded-lg overflow-hidden shadow-md">
+                      <div className="w-full h-20 sm:h-24 md:h-28 lg:h-32 flex-shrink-0">
+                        <img
+                          src={service.image}
+                          alt={service.title}
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+                      <div
+                        className={`flex-1 flex items-center justify-center ${service.color} text-white px-1 py-1`}
+                      >
+                        <h3 className="text-[10px] sm:text-xs md:text-sm font-extrabold text-center leading-tight text-white [text-shadow:_0_1px_1px_rgb(0_0_0_/_40%),_0_2px_4px_rgb(0_0_0_/_40%)] tracking-wide">
+                          {service.title}
+                        </h3>
+                      </div>
                     </div>
                   </div>
-                </div>
                 ))}
               </div>
             </div>

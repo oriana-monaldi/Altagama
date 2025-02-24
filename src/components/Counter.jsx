@@ -46,62 +46,34 @@ const StatsCounter = () => {
     anosExperiencia: 0,
   });
 
-  const containerRef = useRef(null);
-  const intervalRef = useRef(null);
-
-  const startCounting = () => {
-    setCounts({
-      clientesFelices: 0,
-      autosDetallados: 0,
-      calificacionClientes: 0,
-      anosExperiencia: 0,
-    });
-
-    if (intervalRef.current) {
-      clearInterval(intervalRef.current);
-    }
-
-    intervalRef.current = setInterval(() => {
-      setCounts((prev) => ({
-        clientesFelices: Math.min(prev.clientesFelices + 1, 40),
-        autosDetallados: Math.min(prev.autosDetallados + 1, 42),
-        calificacionClientes: parseFloat((Math.min(prev.calificacionClientes + 0.1, 4.6)).toFixed(1)),
-        anosExperiencia: Math.min(prev.anosExperiencia + 1, 20),
-      }));
-    }, 50);
-  };
-
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const [entry] = entries;
-        if (entry.isIntersecting) {
-          startCounting();
-        } else {
-          if (intervalRef.current) {
-            clearInterval(intervalRef.current);
-          }
+    const intervalId = setInterval(() => {
+      setCounts(prev => {
+        const newCounts = {
+          clientesFelices: Math.min(prev.clientesFelices + 1, 40),
+          autosDetallados: Math.min(prev.autosDetallados + 1, 42),
+          calificacionClientes: parseFloat((Math.min(prev.calificacionClientes + 0.1, 4.6)).toFixed(1)),
+          anosExperiencia: Math.min(prev.anosExperiencia + 1, 20),
+        };
+
+        if (
+          newCounts.clientesFelices === 40 &&
+          newCounts.autosDetallados === 42 &&
+          newCounts.calificacionClientes === 4.6 &&
+          newCounts.anosExperiencia === 20
+        ) {
+          clearInterval(intervalId);
         }
-      },
-      { threshold: 0.1 }
-    );
 
-    if (containerRef.current) {
-      observer.observe(containerRef.current);
-    }
+        return newCounts;
+      });
+    }, 50);
 
-    return () => {
-      if (containerRef.current) {
-        observer.unobserve(containerRef.current);
-      }
-      if (intervalRef.current) {
-        clearInterval(intervalRef.current);
-      }
-    };
-  }, []);
+    return () => clearInterval(intervalId);
+  }, []); 
 
   return (
-    <div ref={containerRef} className="mt-8 mb-4 p-4 text-white font-[Arial]">
+    <div className="mt-8 mb-4 p-4 text-white">
       <div className="max-w-6xl mx-auto px-4 lg:w-full">
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
           <div className="text-center relative">
