@@ -8,7 +8,7 @@ import Footer from './components/Footer'
 import Navbar from './components/Navbar'
 function App() {
   return (
-    <div className='bg-gradient-to-r from-gray-900 to-black text-white w-full overflow-x-hidden'>
+    <div className='bg-gradient-to-r from-black to-[#1a1a1a] text-white w-full overflow-x-hidden'>
       <Navbar/>
       <Inicio/>
       <NuestrosServicios/>

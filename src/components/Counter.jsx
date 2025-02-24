@@ -63,8 +63,8 @@ const StatsCounter = () => {
 
     intervalRef.current = setInterval(() => {
       setCounts((prev) => ({
-        clientesFelices: Math.min(prev.clientesFelices + 1, 47),
-        autosDetallados: Math.min(prev.autosDetallados + 1, 21),
+        clientesFelices: Math.min(prev.clientesFelices + 1, 40),
+        autosDetallados: Math.min(prev.autosDetallados + 1, 42),
         calificacionClientes: parseFloat((Math.min(prev.calificacionClientes + 0.1, 4.6)).toFixed(1)),
         anosExperiencia: Math.min(prev.anosExperiencia + 1, 20),
       }));

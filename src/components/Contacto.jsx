@@ -78,7 +78,6 @@ const Contacto = () => {
           </div>
         </div>
 
-        {/* Mapa */}
         <div
           className="bg-white/5 backdrop-blur-sm rounded-lg p-6 mb-12"
           style={{ minHeight: "500px" }}

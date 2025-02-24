@@ -6,7 +6,6 @@ const Footer = () => {
     <footer className="bg-gradient-to-r from-gray-900 to-black text-white py-8">
       <div className="w-full max-w-7xl mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {/* Primer columna */}
           <div className="w-full flex flex-col items-center md:items-start md:ml-20 justify-center">
             <p className="text-lg font-semibold mb-4 text-center md:text-left">
               Alejandro Monaldi
@@ -18,17 +17,15 @@ const Footer = () => {
             </address>
           </div>
 
-          {/* Logo central */}
           <div className="w-full flex justify-center">
             <img src={logo} alt="Logo" className="w-24 h-24 md:w-40 md:h-40" />
           </div>
 
-          {/* Tercera columna */}
           <div className="flex flex-col items-center md:items-start md:ml-20 justify-center">
             <p className="text-lg font-semibold mb-4 text-center md:text-left">
               Contactate con nosotros
             </p>
-            <div className="flex gap-4">
+            <div className="flex items-center ml-10 justify-center gap-4">
               <a
                 href="https://www.facebook.com/AltaGamaBCS/?locale=es_LA"
                 className="hover:text-gray-300 transition-colors"
