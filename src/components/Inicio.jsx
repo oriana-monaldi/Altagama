@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
 import car4 from "/img/car4.jpg";
+import car77 from "/img/car77.jpg";
 import ingresoReal from "/img/ingreso_real.jpg";
 import logo from "/img/logo.png";
 import Counter from "./Counter";
 import SobreNosotros from "./SobreNosotros";
 
-const images = [ingresoReal, car4 ];
+const images = [ingresoReal, car4, car77];
 
 function Inicio() {
   const [currentIndex, setCurrentIndex] = useState(0);
