@@ -81,8 +81,8 @@ const StyledWrapper = styled.div`
     padding-top: 40px;
     font-family: "Poppins", sans-serif;
     justify-content: center;
-    flex-wrap: wrap; /* Permite que los elementos se envuelvan en pantallas pequeñas */
-    gap: 10px; /* Espaciado entre los íconos */
+    flex-wrap: wrap;
+    gap: 20px; /* Aumentar el espacio entre los íconos */
   }
 
   .wrapper .icon {
@@ -134,6 +134,13 @@ const StyledWrapper = styled.div`
     pointer-events: auto;
   }
 
+  /* Para pantallas mayores a 1024px (desktop) */
+  @media (min-width: 1024px) {
+    .wrapper {
+      gap: 30px; /* Aumentar el espacio entre los íconos en pantallas grandes */
+    }
+  }
+
   /* Para pantallas menores a 350px */
   @media (max-width: 350px) {
     .wrapper {
@@ -174,5 +181,6 @@ const StyledWrapper = styled.div`
     color: #fff;
   }
 `;
+
 
 export default Button;
