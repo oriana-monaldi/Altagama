@@ -85,7 +85,7 @@ const Mision = () => {
       title: "MISIÓN",
       color: "text-red-500",
       content:
-        "Nuestra misión es la de construir relaciones duraderas con nuestros clientes, satisfaciendo las necesidades y requerimientos del parque automotor. Brindamos seguridad, confianza y la más alta calidad en nuestros procesos, lo cual es alcanzado a través de nuestra política de mejora continua, constante innovación en materia tecnológica y el desarrollo de nuestro capital más preciado, nuestros recursos humanos.",
+        "Nuestra misión es la de construir relaciones duraderas con nuestros clientes, satisfaciendo las necesidades y requerimientos del parque automotriz. Brindamos seguridad, confianza y la más alta calidad en nuestros procesos, lo cual es alcanzado a través de nuestra política de mejora continua, constante innovación en materia tecnológica y el desarrollo de nuestro capital más preciado, nuestros recursos humanos.",
     },
     {
       title: "QUIÉNES SOMOS",
@@ -106,13 +106,13 @@ const Mision = () => {
       <div id="sobre-nosotros"></div>
       <div className="max-w-6xl mx-auto px-4 lg:w-4/5">
         <div className="flex items-center mb-12">
-          <h1 className="text-white text-3xl pt-4 text-center font-[Sprit] w-full">
+          <h1 className="text-white text-3xl pt-4 mt-10 text-center font-[Sprit] w-full">
             SOBRE NOSOTROS
           </h1>
         </div>
         <div 
           ref={containerRef}
-          className="grid grid-cols-1 md:grid-cols-3 gap-8 relative z-10"
+          className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12 relative z-10" // Aquí añadí el gap-8 y mb-12 para asegurar un buen espaciado
         >
           {cardContents.map((card, index) => (
             <div
