@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect, useRef } from "react";
 import performance from "/img/performance.png";
 import performance2 from "/img/performance2.png";
 import performance3 from "/img/performance3.png";
@@ -6,8 +6,28 @@ import performance4 from "/img/performance4.png";
 import car9 from "/img/car9.webp";
 
 const ServiceCard = ({ imgSrc, title, description }) => {
+  const [isVisible, setIsVisible] = useState(false);
+  const cardRef = useRef(null);
+
+  // Función para verificar si la card está en la vista
+  const checkVisibility = () => {
+    const card = cardRef.current;
+    const rect = card.getBoundingClientRect();
+    setIsVisible(rect.top <= window.innerHeight && rect.bottom >= 0);
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", checkVisibility);
+    checkVisibility(); // Verifica la visibilidad al cargar
+
+    return () => window.removeEventListener("scroll", checkVisibility);
+  }, []);
+
   return (
-    <div className="bg-white/5 backdrop-blur-sm rounded-lg w-full md:w-[calc(50%-1rem)] lg:w-[calc(50%-1rem)] p-6 transition-transform duration-300 hover:scale-105">
+    <div
+      ref={cardRef}
+      className={`bg-white/5 backdrop-blur-sm rounded-lg w-full md:w-[calc(50%-1rem)] lg:w-[calc(50%-1rem)] p-6 transition-all duration-300 hover:scale-105 ${isVisible ? "card-appear" : ""}`}
+    >
       <div className="flex flex-col sm:flex-row items-center gap-4">
         <div className="flex-shrink-0">
           <img
@@ -79,6 +99,5 @@ function Servicios() {
     </div>
   );
 }
-
 
 export default Servicios;
