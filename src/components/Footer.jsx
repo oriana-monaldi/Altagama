@@ -15,50 +15,36 @@ const Footer = () => {
         </div>
 
         <div className="flex flex-col items-center md:items-start">
-          <h3 className="text-lg font-bold mb-4">Quick Links</h3>
+          <h3 className="text-lg font-bold mb-4">Horarios de atención</h3>
           <nav className="flex flex-col space-y-2">
-            <a
-              href="/"
-              className="text-sm hover:text-gray-300 transition-colors"
-            >
-              Home
-            </a>
-            <a
-              href="/about"
-              className="text-sm hover:text-gray-300 transition-colors"
-            >
-              About
-            </a>
-            <a
-              href="/services"
-              className="text-sm hover:text-gray-300 transition-colors"
-            >
-              Services
-            </a>
-            <a
-              href="/contact"
-              className="text-sm hover:text-gray-300 transition-colors"
-            >
-              Contact
-            </a>
+            <p>Lunes - Viernes de 08:00 -18:00</p>
           </nav>
         </div>
 
         <div className="flex flex-col items-center md:items-start">
           <h3 className="text-lg font-bold mb-4">Connect With Us</h3>
           <div className="flex space-x-4">
-            <a href="#" className="hover:text-gray-300 transition-colors">
+            <a
+              href="https://www.facebook.com/AltaGamaBCS/?locale=es_LA"
+              className="hover:text-gray-300 transition-colors"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <Facebook size={20} />
             </a>
-            <a href="#" className="hover:text-gray-300 transition-colors">
+            <a
+              href="https://www.instagram.com/taller.altagama/"
+              className="hover:text-gray-300 transition-colors"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <Instagram size={20} />
             </a>
-            <a href="#" className="hover:text-gray-300 transition-colors">
-              <Twitter size={20} />
-            </a>
             <a
-              href="mailto:contact@example.com"
+              href="mailto:talleraltagama@yahoo.com.ar?subject=Consulta&body=Hola,%20quiero%20hacer%20una%20consulta."
               className="hover:text-gray-300 transition-colors"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               <Mail size={20} />
             </a>
@@ -74,12 +60,11 @@ const Footer = () => {
           </p>
           <nav className="flex space-x-4 mt-4 md:mt-0">
             <a
-              href="/privacidad"
+              href="/privacy"
               className="text-xs hover:text-gray-300 transition-colors"
             >
               Privacy Policy
             </a>
-
             <a
               href="/terms"
               className="text-xs hover:text-gray-300 transition-colors"

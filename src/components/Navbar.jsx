@@ -59,16 +59,16 @@ function Navbar() {
               Inicio
             </li>
             <li 
-              onClick={() => scrollToSection('sobre-nosotros')}
-              className="text-white font-semibold hover:text-gray-300 cursor-pointer"
-            >
-              Sobre Nosotros
-            </li>
-            <li 
               onClick={() => scrollToSection('servicios')}
               className="text-white font-semibold hover:text-gray-300 cursor-pointer"
             >
               Servicios
+            </li>
+            <li 
+              onClick={() => scrollToSection('sobre-nosotros')}
+              className="text-white font-semibold hover:text-gray-300 cursor-pointer"
+            >
+              Sobre Nosotros
             </li>
             <li 
               onClick={() => scrollToSection('contacto')}

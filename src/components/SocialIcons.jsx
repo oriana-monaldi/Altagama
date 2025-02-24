@@ -134,14 +134,12 @@ const StyledWrapper = styled.div`
     pointer-events: auto;
   }
 
-  /* Para pantallas mayores a 1024px (desktop) */
   @media (min-width: 1024px) {
     .wrapper {
       gap: 30px; /* Aumentar el espacio entre los íconos en pantallas grandes */
     }
   }
 
-  /* Para pantallas menores a 350px */
   @media (max-width: 350px) {
     .wrapper {
       justify-content: space-between; /* Acomoda los elementos en dos filas */

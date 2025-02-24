@@ -13,13 +13,13 @@ const Contacto = () => {
     };
 
     const handleResize = () => {
-      setIsMobile(window.innerWidth < 768); // Ajusta este valor para definir el límite entre móvil y escritorio
+      setIsMobile(window.innerWidth < 768); 
     };
 
     window.addEventListener("scroll", handleScroll);
     window.addEventListener("resize", handleResize);
 
-    handleResize(); // Llamar a la función para establecer el estado al inicio
+    handleResize();
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
@@ -31,9 +31,9 @@ const Contacto = () => {
     <div 
       id="contacto" 
       className="relative overflow-hidden"
-      style={{ minHeight: isMobile ? 'auto' : '100vh' }} // Ajuste de la altura según el tamaño de la pantalla
+      style={{ minHeight: isMobile ? 'auto' : '100vh' }} 
     >
-      {/* Imagen de fondo sin parallax en ambos casos */}
+    
       <div 
         className="absolute top-0 left-0 w-full h-full bg-cover bg-center"  
         style={{ 
@@ -42,7 +42,6 @@ const Contacto = () => {
         }}
       />
 
-      {/* Capa oscura encima de la imagen */}
       <div className="absolute top-0 left-0 w-full h-full bg-black opacity-50 z-0"></div>
 
       <div className="max-w-6xl mx-auto px-4 lg:w-4/5 relative z-10 pt-16">
