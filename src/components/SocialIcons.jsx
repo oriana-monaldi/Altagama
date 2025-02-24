@@ -46,7 +46,7 @@ const Button = () => {
         <li className="icon whatsapp">
           <span className="tooltip">WhatsApp</span>
           <a
-            href="https://wa.link/imnkhh"
+            href="https://wa.link/38pq2b"
             target="_blank"
             rel="noopener noreferrer"
           >

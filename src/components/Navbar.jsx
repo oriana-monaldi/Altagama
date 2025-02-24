@@ -125,7 +125,7 @@ function Navbar() {
       </nav>
 
       <a
-        href="https://wa.link/imnkhh"
+        href="https://wa.link/38pq2b"
         target="_blank"
         rel="noopener noreferrer"
         className="fixed bottom-6 right-6 bg-[#25D366] w-16 h-16 rounded-full flex items-center justify-center shadow-lg hover:bg-[#128C7E] transition-colors duration-300 z-50"
