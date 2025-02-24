@@ -13,6 +13,7 @@ const NuestrosServicios = () => {
   const [dragged, setDragged] = useState(0);
   const containerRef = useRef(null);
   const autoSlideRef = useRef(null);
+  const [screenWidth, setScreenWidth] = useState(window.innerWidth);
 
   const services = [
     { image: carUno, title: "INYECCIÓN ELECTRÓNICA", color: "bg-sky-400" },
@@ -47,6 +48,18 @@ const NuestrosServicios = () => {
     setStartX(e.clientX);
   };
 
+  useEffect(() => {
+    const handleResize = () => setScreenWidth(window.innerWidth);
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  const getCardWidth = () => {
+    if (screenWidth < 300) return 140;
+    if (screenWidth < 400) return 160; 
+    if (screenWidth < 700) return 180; 
+    return 220; 
+  };
   const handleMouseMove = (e) => {
     if (!isDragging) return;
     const delta = e.clientX - startX;
@@ -87,17 +100,18 @@ const NuestrosServicios = () => {
     startAutoSlide();
   };
 
+
   return (
     <div className="w-full overflow-hidden">
-      <div className="mt-10 mb-10">
-      <div className="w-full max-w-7xl mx-auto px-4 overflow-hidden">
+      <div className="mt-6 mb-6 sm:mt-10 sm:mb-10">
+        <div className="w-full max-w-7xl mx-auto px-1 sm:px-4 overflow-hidden">
           <div className="relative overflow-hidden">
             <div
               ref={containerRef}
               className="flex transition-transform duration-500 ease-in-out cursor-grab active:cursor-grabbing"
               style={{
-                transform: `translateX(calc(-${activeIndex * 300}px + ${dragged}px))`, 
-                width: `${duplicatedServices.length * 300}px`,
+                transform: `translateX(calc(-${activeIndex * getCardWidth()}px + ${dragged}px))`,
+                width: `${duplicatedServices.length * getCardWidth()}px`,
               }}
               onMouseDown={handleMouseDown}
               onMouseMove={handleMouseMove}
@@ -107,35 +121,40 @@ const NuestrosServicios = () => {
               onTouchMove={handleTouchMove}
               onTouchEnd={handleTouchEnd}
             >
+              
               {duplicatedServices.map((service, index) => (
-                <div key={index} className="w-[300px] flex-shrink-0 px-12"> 
-                  <div className="relative w-full h-64 flex flex-col rounded-lg overflow-hidden">
-                    <div className="w-full h-48 flex-shrink-0">
-                      <img
-                        src={service.image}
-                        alt={service.title}
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-                    <div
-                      className={`flex-1 flex items-center justify-center ${service.color} text-white px-2 py-1`}
-                    >
-                      <h3 className="text-base font-semibold text-center leading-tight">
-                        {service.title}
-                      </h3>
-                    </div>
-                  </div>
-                </div>
-              ))}
+  <div 
+    key={index} 
+    className="w-[140px] sm:w-[160px] md:w-[180px] lg:w-[220px] flex-shrink-0 px-2 sm:px-4 md:px-6 lg:px-8"
+  >
+    <div className="relative w-full h-32 sm:h-40 md:h-48 lg:h-56 flex flex-col rounded-lg overflow-hidden shadow-md">
+      <div className="w-full h-20 sm:h-28 md:h-36 lg:h-44 flex-shrink-0">
+        <img
+          src={service.image}
+          alt={service.title}
+          className="w-full h-full object-cover"
+        />
+      </div>
+      <div
+        className={`flex-1 flex items-center justify-center ${service.color} text-white px-1 py-1`}
+      >
+        <h3 className="text-[9px] sm:text-xs md:text-sm lg:text-base font-semibold text-center leading-tight">
+          {service.title}
+        </h3>
+      </div>
+    </div>
+  </div>
+))}
             </div>
           </div>
         </div>
-
-        <div className="flex justify-center mt-6 gap-4">
+        <div className="flex justify-center mt-4 sm:mt-6 gap-2 sm:gap-4">
           {services.map((_, index) => (
             <button
               key={index}
-              className={`w-3 h-3 rounded-full ${activeIndex === index ? "bg-blue-600" : "bg-gray-300"}`}
+              className={`w-2 h-2 sm:w-3 sm:h-3 rounded-full ${
+                activeIndex === index ? "bg-blue-600" : "bg-gray-300"
+              }`}
               onClick={() => setActiveIndex(index)}
             />
           ))}
