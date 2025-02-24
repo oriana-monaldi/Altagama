@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
-import car7 from "/public/img/car7.jpg";
-import car4 from "/public/img/car4.jpg";
-import ingresoReal from "/public/img/ingreso_real.jpg";
-import logo from "/public/img/logo.png";
+import car7 from "/img/car7.jpg";
+import car4 from "/img/car4.jpg";
+import ingresoReal from "/img/ingreso_real.jpg";
+import logo from "/img/logo.png";
 import Navbar from "./Navbar";
 import Counter from "./Counter";
 import SobreNosotros from "./SobreNosotros";
