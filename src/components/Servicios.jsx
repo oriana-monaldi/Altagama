@@ -82,9 +82,6 @@ function Servicios() {
       <div className="absolute inset-0 bg-black opacity-70"></div>
 
       <div className="relative z-10 container mx-auto px-4">
-        <h2 className="text-3xl sm:text-4xl font-bold text-white text-center mb-12">
-          Nuestros Servicios
-        </h2>
         <div className="flex flex-wrap justify-center gap-6 max-w-7xl mx-auto">
           {services.map((service, index) => (
             <ServiceCard
