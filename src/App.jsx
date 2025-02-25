@@ -11,7 +11,6 @@ function App() {
     <div className='bg-gradient-to-r from-black to-[#1a1a1a] text-white w-full overflow-x-hidden'>
       <Navbar/>
       <Inicio/>
-      <NuestrosServicios/>
       <Servicios/>
       <Mision/>
       <Contacto/>

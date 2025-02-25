@@ -20,30 +20,24 @@ const Contacto = () => {
       setIsMobile(window.innerWidth < 768);
     };
 
-    // Verificar si el local está abierto
     const checkIfOpen = () => {
-      // Obtener la fecha actual con el timezone de Argentina (UTC-3)
       const now = new Date();
       
-      // Forzar a usar el timezone de Argentina
       const argentinaTime = new Date(now.toLocaleString("en-US", {timeZone: "America/Argentina/Buenos_Aires"}));
       
-      const day = argentinaTime.getDay(); // 0 = Domingo, 1 = Lunes, etc.
+      const day = argentinaTime.getDay();
       const hours = argentinaTime.getHours();
       const minutes = argentinaTime.getMinutes();
       const currentTime = hours + minutes / 60;
 
-      // Establecer el día actual
       const days = ["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"];
       setCurrentDay(days[day]);
       setCurrentDayIndex(day);
       
-      // Formato para mostrar fecha y hora para debugging
       setCurrentDateTime(
         `${argentinaTime.toLocaleDateString('es-AR')} ${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}`
       );
 
-      // Verificar si está abierto (Lunes a Viernes de 8:00 a 18:00)
       setIsOpen(day >= 1 && day <= 5 && currentTime >= 8 && currentTime < 18);
     };
 
@@ -53,7 +47,6 @@ const Contacto = () => {
     handleResize();
     checkIfOpen();
 
-    // Actualizar el estado cada minuto
     const interval = setInterval(checkIfOpen, 60000);
 
     return () => {

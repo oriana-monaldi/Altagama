@@ -4,7 +4,7 @@ import car77 from "/img/car77.webp";
 import ingresoReal from "/img/ingreso_real.webp";
 import logo from "/img/logo.png";
 import Counter from "./Counter";
-import SobreNosotros from "./SobreNosotros";
+import NuestrosServicios from "./NuestrosServicios";
 
 const images = [ingresoReal, car4, car77];
 
@@ -19,11 +19,10 @@ function Inicio() {
   }, []);
 
   return (
-    <div className="w-full overflow-x-hidden">
-      
+    <div className="w-full h-screen overflow-x-hidden flex flex-col">
       <div id="inicio"></div>
 
-      <div className="relative flex items-center justify-center overflow-hidden h-[60vh] w-full">
+      <div className="relative flex items-center justify-center overflow-hidden h-[50vh] w-full">
         {images.map((image, index) => (
           <img
             key={index}
@@ -44,9 +43,9 @@ function Inicio() {
           SERVICIO MECÁNICO
         </h1>
       </div>
-      <SobreNosotros />
-      <div className="w-full">
-      <Counter />
+      <div className="w-full h-[50vh] overflow-y-auto">
+        <Counter />
+        <NuestrosServicios/>
       </div>
     </div>
   );
