@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import car4 from "/img/car4.jpg";
-import car77 from "/img/car77.jpg";
-import ingresoReal from "/img/ingreso_real.jpg";
+import car4 from "/img/car4.webp";
+import car77 from "/img/car77.webp";
+import ingresoReal from "/img/ingreso_real.webp";
 import logo from "/img/logo.png";
 import Counter from "./Counter";
 import SobreNosotros from "./SobreNosotros";

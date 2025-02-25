@@ -1,10 +1,10 @@
 import React, { useEffect, useState, useRef } from "react";
-import carUno from "/img/car1.png";
-import carDos from "/img/car2.png";
-import carCuatro from "/img/car4.jpg";
-import carSiete from "/img/car7.jpg";
-import herramientas from "/img/herramientas1.jpg";
-import carTres from "/img/car3.avif";
+import carUno from "/img/car1.webp";
+import carDos from "/img/car2.webp";
+import carCuatro from "/img/car4.webp";
+import carSiete from "/img/car7.webp";
+import herramientas from "/img/herramientas1.webp";
+import carTres from "/img/car3.webp";
 
 const NuestrosServicios = () => {
   const [activeIndex, setActiveIndex] = useState(0);

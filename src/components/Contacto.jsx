@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Clock, Phone, MapPin } from "lucide-react";
 import SocialIcons from "./SocialIcons";
-import fondoServicios from "/img/fondoServicios.jpg";
+import fondoServicios from "/img/fondoServicios.webp";
 
 const Contacto = () => {
   const [scrollY, setScrollY] = useState(0);
