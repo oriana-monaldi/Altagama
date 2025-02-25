@@ -85,8 +85,8 @@ const Contacto = () => {
                   Horarios de Atención
                 </h3>
               </div>
-              <div className={`px-3 py-1 rounded-lg text-sm font-medium ${isOpen ? 'bg-green-500/80' : 'bg-red-500/80'}`}>
-                {isOpen ? 'Abierto ahora' : 'Cerrado ahora'}
+              <div className={`px-3 py-1 rounded-lg text-center  text-sm font-medium ${isOpen ? 'bg-green-500/80' : 'bg-red-500/80'}`}>
+                {isOpen ? 'Abierto ahora' : 'Cerrado Ahora'}
               </div>
             </div>
             <div className="space-y-2">
