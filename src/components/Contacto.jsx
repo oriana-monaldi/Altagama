@@ -143,11 +143,13 @@ const Contacto = () => {
 
           <div className="bg-white/5 item-center backdrop-blur-sm rounded-lg p-4">
             <div className="flex items-center mt-2 gap-3">
+              <div className="flex items-center gap-3">
               <Phone className="w-6 h-6 text-yellow-400" />
               <h3 className="text-xl font-semibold text-white">
-                Contactate con nosotros
-              </h3>
+              Medios de contacto </h3>
             </div>
+
+              </div>
             <SocialIcons />
           </div>
         </div>
