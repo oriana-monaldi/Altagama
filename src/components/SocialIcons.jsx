@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import whatsapp from "/img/whastapp.png";
-import email from "/img/email.png";
+import whatsapp from "/img/whastapp.webp";
+import email from "/img/email.webp";
 
 
 const Button = () => {

@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useRef } from "react";
-import performance from "/img/performance.png";
-import performance2 from "/img/performance2.png";
-import performance3 from "/img/performance3.png";
-import performance4 from "/img/performance4.png";
+import performance from "/img/performance.webp";
+import performance2 from "/img/performance2.webp";
+import performance3 from "/img/performance3.webp";
+import performance4 from "/img/performance4.webp";
 import car9 from "/img/car9.webp";
 
 const ServiceCard = ({ imgSrc, title, description }) => {
