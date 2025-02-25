@@ -6,7 +6,11 @@ import fondoServicios from "/img/fondoServicios.webp";
 const Contacto = () => {
   const [scrollY, setScrollY] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
-
+  const [isOpen, setIsOpen] = useState(false);
+  const [currentDay, setCurrentDay] = useState("");
+  const [currentDayIndex, setCurrentDayIndex] = useState(0);
+  const [currentDateTime, setCurrentDateTime] = useState("");
+  
   useEffect(() => {
     const handleScroll = () => {
       setScrollY(window.scrollY);
@@ -16,14 +20,46 @@ const Contacto = () => {
       setIsMobile(window.innerWidth < 768);
     };
 
+    // Verificar si el local está abierto
+    const checkIfOpen = () => {
+      // Obtener la fecha actual con el timezone de Argentina (UTC-3)
+      const now = new Date();
+      
+      // Forzar a usar el timezone de Argentina
+      const argentinaTime = new Date(now.toLocaleString("en-US", {timeZone: "America/Argentina/Buenos_Aires"}));
+      
+      const day = argentinaTime.getDay(); // 0 = Domingo, 1 = Lunes, etc.
+      const hours = argentinaTime.getHours();
+      const minutes = argentinaTime.getMinutes();
+      const currentTime = hours + minutes / 60;
+
+      // Establecer el día actual
+      const days = ["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"];
+      setCurrentDay(days[day]);
+      setCurrentDayIndex(day);
+      
+      // Formato para mostrar fecha y hora para debugging
+      setCurrentDateTime(
+        `${argentinaTime.toLocaleDateString('es-AR')} ${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}`
+      );
+
+      // Verificar si está abierto (Lunes a Viernes de 8:00 a 18:00)
+      setIsOpen(day >= 1 && day <= 5 && currentTime >= 8 && currentTime < 18);
+    };
+
     window.addEventListener("scroll", handleScroll);
     window.addEventListener("resize", handleResize);
 
     handleResize();
+    checkIfOpen();
+
+    // Actualizar el estado cada minuto
+    const interval = setInterval(checkIfOpen, 60000);
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
       window.removeEventListener("resize", handleResize);
+      clearInterval(interval);
     };
   }, []);
 
@@ -49,26 +85,71 @@ const Contacto = () => {
         </h1>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
           <div className="bg-white/5 backdrop-blur-sm rounded-lg p-6">
-            <div className="flex items-center gap-3 mb-4">
-              <Clock className="w-6 h-6 text-blue-400" />
-              <h3 className="text-xl font-semibold text-white">
-                Horarios de Atención
-              </h3>
+            <div className="flex items-center justify-between mb-4">
+              <div className="flex items-center gap-3">
+                <Clock className="w-6 h-6 text-blue-400" />
+                <h3 className="text-xl font-semibold text-white">
+                  Horarios de Atención
+                </h3>
+              </div>
+              <div className={`px-3 py-1 rounded-lg text-sm font-medium ${isOpen ? 'bg-green-500/80' : 'bg-red-500/80'}`}>
+                {isOpen ? 'Abierto ahora' : 'Cerrado ahora'}
+              </div>
             </div>
             <div className="space-y-2">
-              <p className="flex justify-between text-white">
-                <span>Lunes a Viernes:</span>
-                <span>8:00 - 18:00</span>
+              <p className={`flex justify-between ${currentDayIndex === 1 ? (isOpen ? "text-green-400 font-bold" : "text-red-400 font-bold") : "text-white"}`}>
+                <span>Lunes:</span>
+                <span>
+                  {currentDayIndex === 1 && !isOpen && <span className="text-red-400 mr-2">Cerrado</span>}
+                  {currentDayIndex === 1 && isOpen && <span className="text-green-400 mr-2">Abierto</span>}
+                  8:00 - 18:00
+                </span>
               </p>
-              <p className="flex justify-between text-gray-400">
+              <p className={`flex justify-between ${currentDayIndex === 2 ? (isOpen ? "text-green-400 font-bold" : "text-red-400 font-bold") : "text-white"}`}>
+                <span>Martes:</span>
+                <span>
+                  {currentDayIndex === 2 && !isOpen && <span className="text-red-400 mr-2">Cerrado</span>}
+                  {currentDayIndex === 2 && isOpen && <span className="text-green-400 mr-2">Abierto</span>}
+                  8:00 - 18:00
+                </span>
+              </p>
+              <p className={`flex justify-between ${currentDayIndex === 3 ? (isOpen ? "text-green-400 font-bold" : "text-red-400 font-bold") : "text-white"}`}>
+                <span>Miércoles:</span>
+                <span>
+                  {currentDayIndex === 3 && !isOpen && <span className="text-red-400 mr-2">Cerrado</span>}
+                  {currentDayIndex === 3 && isOpen && <span className="text-green-400 mr-2">Abierto</span>}
+                  8:00 - 18:00
+                </span>
+              </p>
+              <p className={`flex justify-between ${currentDayIndex === 4 ? (isOpen ? "text-green-400 font-bold" : "text-red-400 font-bold") : "text-white"}`}>
+                <span>Jueves:</span>
+                <span>
+                  {currentDayIndex === 4 && !isOpen && <span className="text-red-400 mr-2">Cerrado</span>}
+                  {currentDayIndex === 4 && isOpen && <span className="text-green-400 mr-2">Abierto</span>}
+                  8:00 - 18:00
+                </span>
+              </p>
+              <p className={`flex justify-between ${currentDayIndex === 5 ? (isOpen ? "text-green-400 font-bold" : "text-red-400 font-bold") : "text-white"}`}>
+                <span>Viernes:</span>
+                <span>
+                  {currentDayIndex === 5 && !isOpen && <span className="text-red-400 mr-2">Cerrado</span>}
+                  {currentDayIndex === 5 && isOpen && <span className="text-green-400 mr-2">Abierto</span>}
+                  8:00 - 18:00
+                </span>
+              </p>
+              <p className={`flex justify-between ${currentDayIndex === 0 || currentDayIndex === 6 ? "text-red-400 font-bold" : "text-gray-400"}`}>
                 <span>Sábados y Domingos:</span>
-                <span>Cerrado</span>
+                <span>
+                  {(currentDayIndex === 0 || currentDayIndex === 6) && <span className="text-red-400 mr-2">Cerrado</span>}
+                  Cerrado
+                </span>
               </p>
+
             </div>
           </div>
 
-          <div className="bg-white/5 backdrop-blur-sm rounded-lg p-4">
-            <div className="flex items-center gap-3">
+          <div className="bg-white/5 item-center backdrop-blur-sm rounded-lg p-4">
+            <div className="flex items-center mt-2 gap-3">
               <Phone className="w-6 h-6 text-yellow-400" />
               <h3 className="text-xl font-semibold text-white">
                 Contactate con nosotros

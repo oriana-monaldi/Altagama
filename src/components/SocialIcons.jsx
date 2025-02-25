@@ -3,9 +3,10 @@ import styled from "styled-components";
 import whatsapp from "/img/whastapp.webp";
 import email from "/img/email.webp";
 
-
 const Button = () => {
   return (
+    <div className="mt-10">
+
     <StyledWrapper>
       <ul className="wrapper">
         <li className="icon facebook">
@@ -69,6 +70,7 @@ const Button = () => {
         </li>
       </ul>
     </StyledWrapper>
+    </div>
   );
 };
 
@@ -89,7 +91,7 @@ const StyledWrapper = styled.div`
 
   .wrapper .icon {
     position: relative;
-    background: #000;
+    background: #fff;
     border-radius: 50%;
     width: 50px;
     height: 50px;
@@ -110,7 +112,7 @@ const StyledWrapper = styled.div`
     top: 0;
     font-size: 14px;
     background: #fff;
-    color: #000;
+    color: #fff;
     padding: 5px 8px;
     border-radius: 5px;
     box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
@@ -125,7 +127,7 @@ const StyledWrapper = styled.div`
     height: 8px;
     width: 8px;
     background: #fff;
-        color: #000;
+        color: #fff;
 
     bottom: -3px;
     left: 50%;
@@ -161,28 +163,28 @@ const StyledWrapper = styled.div`
   .wrapper .facebook:hover .tooltip,
   .wrapper .facebook:hover .tooltip::before {
     background: #1877f2;
-    color: #000;
+    color: #fff;
   }
 
   .wrapper .instagram:hover,
   .wrapper .instagram:hover .tooltip,
   .wrapper .instagram:hover .tooltip::before {
     background: #e4405f;
-    color: #000;
+    color: #fff;
   }
 
   .wrapper .whatsapp:hover,
   .wrapper .whatsapp:hover .tooltip,
   .wrapper .whatsapp:hover .tooltip::before {
     background: #25d366;
-    color: #000;
+    color: #fff;
   }
 
   .wrapper .email:hover,
   .wrapper .email:hover .tooltip,
   .wrapper .email:hover .tooltip::before {
     background: #00bcff;
-    color: #000;
+    color: #fff;
   }
 `;
 
