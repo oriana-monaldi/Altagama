@@ -120,12 +120,12 @@ const NuestrosServicios = () => {
   };
 
   return (
-    <div className="w-full overflow-hidden">
+    <div className="w-full">
       <div className="mt-6 mb-6 sm:mt-10 sm:mb-10">
         <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="relative overflow-hidden overflow-y-">
+          <div className="relative">
             <div
-              className="relative overflow-hidden mx-auto"
+              className="relative overflow-x-hidden mx-auto"
               style={{
                 width: `${getVisibleCards() * getCardWidth()}px`,
               }}
@@ -153,7 +153,7 @@ const NuestrosServicios = () => {
                     style={{ width: `${getCardWidth()}px` }}
                     className="flex-shrink-0 px-1 sm:px-2"
                   >
-                    <div className="relative w-full h-32 sm:h-36 md:h-40 lg:h-44 flex flex-col rounded-lg overflow-hidden shadow-md">
+                    <div className="relative w-full h-32 sm:h-36 md:h-40 lg:h-44 flex flex-col rounded-lg shadow-md">
                       <div className="w-full h-20 sm:h-24 md:h-28 lg:h-32 flex-shrink-0">
                         <img
                           src={service.image}

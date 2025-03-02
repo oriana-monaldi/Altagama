@@ -37,13 +37,13 @@ function Inicio() {
         <img
           src={logo}
           alt="logo"
-          className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 object-contain z-20"
+          className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 object-contain z-20 py-8"
         />
         <h1 className="text-white text-2xl mt-60 font-bold z-20">
           SERVICIO MECÁNICO
         </h1>
       </div>
-      <div className="w-full h-[55vh]">
+      <div className="w-full">
         <Counter />
         <NuestrosServicios/>
       </div>
