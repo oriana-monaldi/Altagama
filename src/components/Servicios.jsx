@@ -9,7 +9,6 @@ const ServiceCard = ({ imgSrc, title, description }) => {
   const [isVisible, setIsVisible] = useState(false);
   const cardRef = useRef(null);
 
-  // Función para verificar si la card está en la vista
   const checkVisibility = () => {
     const card = cardRef.current;
     const rect = card.getBoundingClientRect();
@@ -18,7 +17,7 @@ const ServiceCard = ({ imgSrc, title, description }) => {
 
   useEffect(() => {
     window.addEventListener("scroll", checkVisibility);
-    checkVisibility(); // Verifica la visibilidad al cargar
+    checkVisibility();
 
     return () => window.removeEventListener("scroll", checkVisibility);
   }, []);
@@ -26,7 +25,9 @@ const ServiceCard = ({ imgSrc, title, description }) => {
   return (
     <div
       ref={cardRef}
-      className={`bg-white/5 backdrop-blur-sm rounded-lg w-full md:w-[calc(50%-1rem)] lg:w-[calc(50%-1rem)] p-6 transition-all duration-300 hover:scale-105 ${isVisible ? "card-appear" : ""}`}
+      className={`bg-white/5 backdrop-blur-sm rounded-lg w-full md:w-[calc(50%-1rem)] lg:w-[calc(50%-1rem)] p-6 transition-all duration-300 hover:scale-105 ${
+        isVisible ? "card-appear" : ""
+      }`}
     >
       <div className="flex flex-col sm:flex-row items-center gap-4">
         <div className="flex-shrink-0">
@@ -37,8 +38,12 @@ const ServiceCard = ({ imgSrc, title, description }) => {
           />
         </div>
         <div className="flex flex-col items-center sm:items-start w-full">
-          <h3 className="text-lg sm:text-xl font-semibold text-center sm:text-left text-white mb-2">{title}</h3>
-          <p className="text-gray-300 text-center sm:text-left text-sm sm:text-base">{description}</p>
+          <h3 className="text-lg sm:text-xl font-semibold text-center sm:text-left text-white mb-2">
+            {title}
+          </h3>
+          <p className="text-gray-300 text-center sm:text-left text-sm sm:text-base">
+            {description}
+          </p>
         </div>
       </div>
     </div>
@@ -73,15 +78,19 @@ function Servicios() {
   return (
     <div
       id="servicios"
-      className="bg-cover bg-center relative flex justify-center items-center min-h-screen py-16 sm:py-20"
+      className="bg-cover bg-center relative flex flex-col justify-center items-center min-h-screen py-16 sm:py-20"
       style={{
         backgroundImage: `url(${car9})`,
         backgroundAttachment: "fixed",
       }}
     >
       <div className="absolute inset-0 bg-black opacity-70"></div>
-
+      
       <div className="relative z-10 container mx-auto px-4">
+        <h1 className="text-white text-4xl sm:text-4xl lg:text-5xl xl:text-5xl mb-30 text-center">
+          SERVICIOS
+        </h1>
+        
         <div className="flex flex-wrap justify-center gap-6 max-w-7xl mx-auto">
           {services.map((service, index) => (
             <ServiceCard

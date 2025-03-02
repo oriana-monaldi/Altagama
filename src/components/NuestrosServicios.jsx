@@ -123,7 +123,7 @@ const NuestrosServicios = () => {
     <div className="w-full overflow-hidden">
       <div className="mt-6 mb-6 sm:mt-10 sm:mb-10">
         <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="relative overflow-hidden">
+          <div className="relative overflow-hidden overflow-y-">
             <div
               className="relative overflow-hidden mx-auto"
               style={{

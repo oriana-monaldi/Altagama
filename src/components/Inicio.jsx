@@ -43,7 +43,7 @@ function Inicio() {
           SERVICIO MECÁNICO
         </h1>
       </div>
-      <div className="w-full h-[50vh] overflow-y-auto">
+      <div className="w-full h-[50vh] overflow-y-hidden ">
         <Counter />
         <NuestrosServicios/>
       </div>
