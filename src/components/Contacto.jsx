@@ -133,7 +133,7 @@ const Contacto = () => {
               <p className={`flex justify-between ${currentDayIndex === 0 || currentDayIndex === 6 ? "text-red-400 font-bold" : "text-gray-400"}`}>
                 <span>Sábados y Domingos:</span>
                 <span>
-                  {(currentDayIndex === 0 || currentDayIndex === 6) && <span className="text-red-400 mr-2">Cerrado</span>}
+                  {(currentDayIndex === 0 || currentDayIndex === 6) && <span className="text-red-400 mr-2"></span>}
                   Cerrado
                 </span>
               </p>
