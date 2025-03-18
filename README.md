@@ -1,9 +1,21 @@
-# React + Vite
+# 🚗 Servicio Mecánico Integral Altagama  
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Repositorio de la landing page de **Altagama**, un taller mecánico ubicado en **La Plata**, especializado en brindar un servicio de alta calidad para el mantenimiento y reparación de vehículos.  
 
-Currently, two official plugins are available:
+## 🚀 Tecnologías Utilizadas  
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-# Altagama
+Este proyecto ha sido desarrollado utilizando las siguientes tecnologías:  
+
+- ⚛️ **React** 
+- ⚡ **Vite**  
+- 🎨 **Tailwind CSS** 
+
+## 🛠️ Acerca del Proyecto  
+
+Este sitio web actúa como la carta de presentación del taller **Altagama**, proporcionando información sobre sus servicios, valores y formas de contacto. La landing page ha sido diseñada con un enfoque **minimalista y moderno**, optimizada para una experiencia fluida en dispositivos móviles y de escritorio.  
+
+## 🌐 Enlace al Proyecto  
+
+Sitio web en:  
+🔗 [https://talleraltagama.com/](https://talleraltagama.com/)  
+
