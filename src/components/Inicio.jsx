@@ -19,10 +19,10 @@ function Inicio() {
   }, []);
 
   return (
-    <div className="w-full h-screen overflow-x-hidden flex flex-col">
+    <div className="w-full min-h-screen overflow-x-hidden flex flex-col">
       <div id="inicio"></div>
 
-      <div className="relative flex items-center justify-center overflow-hidden h-[50vh] w-full">
+      <div className="relative flex items-center justify-center overflow-hidden h-[60vh] w-full">
         {images.map((image, index) => (
           <img
             key={index}
@@ -34,16 +34,19 @@ function Inicio() {
             style={{ objectPosition: "center 15%" }}
           />
         ))}
-        <img
-          src={logo}
-          alt="logo"
-          className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 object-contain z-20 py-8"
-        />
-        <h1 className="text-white text-2xl mt-60 font-bold z-20">
-          SERVICIO MECÁNICO
-        </h1>
+        <div className="absolute flex flex-col items-center justify-center gap-8 z-20">
+          <img
+            src={logo}
+            alt="logo"
+            className="w-80 h-80 object-contain py-8"
+          />
+          <h1 className="text-white text-2xl font-bold">
+            SERVICIO MECÁNICO
+          </h1>
+        </div>
       </div>
-      <div className="w-full">
+
+      <div className="w-full flex-1">
         <Counter />
         <NuestrosServicios/>
       </div>
