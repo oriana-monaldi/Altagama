@@ -93,75 +93,72 @@ const Mision = () => {
     },
   ];
 
-
- return (
-  <div id="sobre-nosotros">
-
-
-  <div className="text-white p-4 sm:p-8 md:p-12 lg:p-20 relative overflow-hidden min-h-screen flex items-center">
-  <div className="w-full max-w-7xl mx-auto px-2 sm:px-4 my-12 sm:my-16 md:my-20">
-    <div className="flex items-center mb-12 sm:mb-16">
-      <h1 className="text-white text-4xl sm:text-4xl lg:text-5xl xl:text-5xl p-6 text-center w-full">
-        SOBRE NOSOTROS
-      </h1>   
-    </div>
-      <div
-        ref={containerRef}
-        className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 mb-8 sm:mb-12 relative z-10"
-      >
-        {cardContents.map((card, index) => (
-          <div
-            key={card.h2}
-            ref={(el) => (cardRefs.current[index] = el)}
-            className={`
-              relative group
-              bg-gradient-to-br from-white/10 to-white/5
-              backdrop-blur-lg rounded-xl p-4 sm:p-6
-              w-full max-w-[95%] sm:max-w-[85%] md:max-w-none mx-auto
-              transform-gpu animate-out
-              transition-all duration-700
-              before:absolute before:inset-0
-              before:bg-gradient-to-br
-              before:from-transparent before:to-white/10
-              before:rounded-xl before:opacity-0
-              before:transition-opacity before:duration-500
-              hover:before:opacity-100
-              after:absolute after:inset-0
-              after:bg-gradient-to-br after:from-white/5 after:to-transparent
-              after:rounded-xl after:opacity-0 after:transition-opacity
-              after:duration-500 hover:after:opacity-100
-              shadow-lg shadow-black/20
-            `}
-            style={{
-              transformStyle: "preserve-3d",
-            }}
-          >
-            <div className="relative z-10">
-              <h2
-                className={`
-                  ${card.color} text-2xl font-bold mb-4 font-[Sprit]
-                  transform-gpu transition-transform duration-500
-                `}
-              >
-                {card.h2}
-              </h2>
-              <p className="text-gray-300 transform-gpu transition-all duration-500 group-hover:text-white group-hover:translate-z-10">
-                {card.content}
-              </p>
-            </div>
-            <div
-              className="
-                absolute inset-0 bg-gradient-to-tr
-                from-white/0 via-white/5 to-white/0
-                rounded-xl opacity-0 group-hover:opacity-100
-                blur-xl transition-opacity duration-500
-              "
-            />
+  return (
+    <div id="sobre-nosotros">
+      <div className="text-white p-4 sm:p-8 md:p-12 lg:p-20 relative overflow-hidden min-h-screen flex items-center">
+        <div className="w-full max-w-7xl mx-auto px-2 sm:px-4 my-12 sm:my-16 md:my-20">
+          <div className="flex items-center mb-12 sm:mb-16">
+            <h1 className="text-white text-4xl sm:text-4xl lg:text-5xl xl:text-5xl p-6 text-center w-full">
+              SOBRE NOSOTROS
+            </h1>
           </div>
-        ))}
+          <div
+            ref={containerRef}
+            className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 mb-8 sm:mb-12 relative z-10"
+          >
+            {cardContents.map((card, index) => (
+              <div
+                key={card.h2}
+                ref={(el) => (cardRefs.current[index] = el)}
+                className={`
+                  relative group
+                  bg-gradient-to-br from-white/10 to-white/5
+                  backdrop-blur-lg rounded-xl p-4 sm:p-6
+                  w-full max-w-[95%] sm:max-w-[85%] md:max-w-none mx-auto
+                  transform-gpu animate-out
+                  transition-all duration-700
+                  before:absolute before:inset-0
+                  before:bg-gradient-to-br
+                  before:from-transparent before:to-white/10
+                  before:rounded-xl before:opacity-0
+                  before:transition-opacity before:duration-500
+                  hover:before:opacity-100
+                  after:absolute after:inset-0
+                  after:bg-gradient-to-br after:from-white/5 after:to-transparent
+                  after:rounded-xl after:opacity-0 after:transition-opacity
+                  after:duration-500 hover:after:opacity-100
+                  shadow-lg shadow-black/20
+                `}
+                style={{
+                  transformStyle: "preserve-3d",
+                }}
+              >
+                <div className="relative z-10">
+                  <h2
+                    className={`
+                      ${card.color} text-2xl font-bold mb-4 font-[Sprit]
+                      transform-gpu transition-transform duration-500
+                    `}
+                  >
+                    {card.h2}
+                  </h2>
+                  <p className="text-gray-300 transform-gpu transition-all duration-500 group-hover:text-white group-hover:translate-z-10">
+                    {card.content}
+                  </p>
+                </div>
+                <div
+                  className="
+                    absolute inset-0 bg-gradient-to-tr
+                    from-white/0 via-white/5 to-white/0
+                    rounded-xl opacity-0 group-hover:opacity-100
+                    transition-opacity duration-500
+                  "
+                />
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
       <style>{`
         .animate-in {
           animation: cardAnimateIn 1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
