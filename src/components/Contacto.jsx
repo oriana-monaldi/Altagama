@@ -73,7 +73,7 @@ const Contacto = () => {
       <div className="absolute top-0 left-0 w-full h-full opacity-0 z-0"></div>
 
       <div className="max-w-6xl mx-auto px-4 lg:w-4/5 relative z-10 pt-16">
-        <h1 className="text-white text-4xl sm:text-4xl lg:text-5xl xl:text-5xl p-6 mt-10 text-center w-full">
+        <h1 className="text-white text-4xl sm:text-4xl lg:text-5xl xl:text-5xl p-6 mt-4 text-center w-full">
           CONTACTO
         </h1>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
