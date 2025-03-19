@@ -19,8 +19,8 @@ Este sitio web actúa como la carta de presentación del taller **Altagama**, pr
 Sitio web en:  
 🔗 [https://talleraltagama.com/](https://talleraltagama.com/)  
 
-### Imagen de escritorio
+## 🌆 Vistas del Proyecto
+
 ![Desktop](public/img/desktop.png)
 
-### Imagen móvil
 ![Mobile](public/img/mobile.png)
