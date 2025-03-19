@@ -12,7 +12,7 @@ Este proyecto ha sido desarrollado utilizando las siguientes tecnologías:
 
 ## 🛠️ Acerca del Proyecto  
 
-Este sitio web actúa como la carta de presentación del taller **Altagama**, proporcionando información sobre sus servicios, valores y formas de contacto. La landing page ha sido diseñada con un enfoque **minimalista y moderno**, optimizada para una experiencia fluida en dispositivos móviles y de escritorio.  
+Este sitio web actúa como la carta de presentación del taller **Altagama**, proporcionando información sobre sus servicios, valores y formas de contacto. La landing page ha sido diseñada con un enfoque **mobile-first**, priorizando la experiencia en dispositivos móviles y adaptándose de manera fluida a pantallas de escritorio. La interfaz se presenta con un diseño **minimalista y moderno**, optimizado para una experiencia de usuario coherente en todas las plataformas.  
 
 ## 🌐 Enlace al Proyecto  
 
