@@ -74,36 +74,38 @@ function Servicios() {
       description: "Asesoramiento y seguimiento a medida.",
     },
   ];
-
+  
   return (
     <div
       id="servicios"
-      className="bg-cover bg-center relative flex flex-col justify-center items-center min-h-screen py-16 sm:py-20"
+      className="w-full min-h-screen relative before:content-[''] before:absolute before:inset-0 before:bg-black before:opacity-70"
       style={{
         backgroundImage: `url(${car9})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
         backgroundAttachment: "fixed",
+        isolation: "isolate",
       }}
     >
-      <div className="absolute inset-0 bg-black opacity-70"></div>
-      
-      <div className="relative z-10 container mx-auto px-4">
-        <h1 className="text-white text-4xl sm:text-4xl lg:text-5xl xl:text-5xl mb-30 text-center">
-          SERVICIOS
-        </h1>
-        
-        <div className="flex flex-wrap justify-center gap-6 max-w-7xl mx-auto">
-          {services.map((service, index) => (
-            <ServiceCard
-              key={index}
-              imgSrc={service.imgSrc}
-              title={service.title}
-              description={service.description}
-            />
-          ))}
+      <div className="relative z-10 h-full w-full min-h-screen py-16 sm:py-20 flex flex-col items-center justify-center">
+        <div className="container mx-auto px-4">
+          <h1 className="text-white text-4xl sm:text-4xl lg:text-5xl xl:text-5xl mb-30 text-center">
+            SERVICIOS
+          </h1>
+          
+          <div className="flex flex-wrap justify-center gap-6 max-w-7xl mx-auto">
+            {services.map((service, index) => (
+              <ServiceCard
+                key={index}
+                imgSrc={service.imgSrc}
+                title={service.title}
+                description={service.description}
+              />
+            ))}
+          </div>
         </div>
       </div>
     </div>
-  );
+);
 }
-
 export default Servicios;

@@ -15,7 +15,6 @@ const NuestrosServicios = () => {
   const autoSlideRef = useRef(null);
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
 
-  // colors
 
   const services = [
     { image: carUno, title: "INYECCIÓN ELECTRÓNICA", color: "bg-blue-600" },
