@@ -22,7 +22,7 @@ function Inicio() {
     <div className="w-full min-h-screen overflow-x-hidden flex flex-col">
       <div id="inicio"></div>
 
-      <div className="relative flex items-center justify-center overflow-hidden h-[60vh] w-full">
+      <div className="relative flex items-center justify-center overflow-hidden h-[55vh] w-full">
         {images.map((image, index) => (
           <img
             key={index}

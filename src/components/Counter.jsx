@@ -73,7 +73,7 @@ const StatsCounter = () => {
   }, []); 
 
   return (
-    <div className="px-4 pt-4 text-white">
+    <div className="px-4 pt-10 text-white">
       <div className="max-w-6xl mx-auto px-4 lg:w-full">
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
           <div className="text-center relative">
